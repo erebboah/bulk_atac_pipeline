@@ -1,5 +1,6 @@
 # Bulk ATAC-seq Analysis Pipeline
 The goal of week 10 in Eco Evo 283 was to use what we have learned to do a small project relevant to our bioinformatics interests. 
+
 I am adapting a bulk ATAC-seq pipeline written for SGE using outdated software to one that will work using HPC3's slurm scheduler with newer packages.
 
 Original scripts graciously provided by Dr. Murad and PhD candidate Klebea Carvalho.
