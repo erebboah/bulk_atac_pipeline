@@ -9,7 +9,7 @@
 #SBATCH --error=fastqc-%J.err ## error log file
 
 inpath="/share/crsp/lab/seyedam/share/newATAC/"
-file=$inpath"prefixes_fastqc.txt" # sample prefix file containing the names for the samples you want to process
+file=$inpath"prefixes_all.txt" # sample prefix file containing the names for the samples you want to process
 prefix=`head -n $SLURM_ARRAY_TASK_ID  ${file} | tail -n 1`
  
 module load fastqc/0.11.9
