@@ -5,7 +5,7 @@ I am adapting a bulk ATAC-seq pipeline written for old HPC using outdated softwa
 
 Original scripts graciously provided by Dr. Rabi Murad and PhD candidate Klebea Carvalho (Mortazavi lab).
 
-In 6 bash scripts, this pipeline does the following:
+In 6 bash scripts, this pipeline does the following in summary:
 1) Check read quality with `fastqc`
 2) Map reads with `bowtie2`, remove duplicates with `Picard`, and shift reads due to transposase binding
 3) Call 150bp and 500bp peaks with `Homer`
@@ -13,6 +13,7 @@ In 6 bash scripts, this pipeline does the following:
 5) Merge peaks
 6) Make counts matrix with `Homer`
 
+Please see this readme for more details on each step.
 
 ## Check read quality
 First, make a prefixes text file containing the names of samples you want to process (all samples can be run together regardless of genome):
