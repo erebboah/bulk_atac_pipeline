@@ -35,10 +35,16 @@ AT_AC_6_S4/
 ```
 
 ## Map, remove duplicates, and shift reads
-First, make sure there is a bowtie2 indexed reference genome. If not, make one from a reference fasta:
+First, make sure there is a bowtie2 indexed M chromosome and reference genome. If not, make one from a reference fasta:
 ```
-cd ref/
-module load bowtie/2.4.1
+cd ref/chrM/
+module load bowtie2/2.4.1
+bowtie2-build Homo_sapiens.GRCh38.dna.chromosome.MT.fa chrM
+```
+
+```
+cd ref/hg38/
+module load bowtie2/2.4.1
 bowtie2-build GRCh38_encode.fasta hg38
 ```
 
