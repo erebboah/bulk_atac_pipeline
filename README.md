@@ -13,7 +13,7 @@ In 6 bash scripts, this pipeline does the following in summary:
 5) Merge peaks
 6) Make counts matrix with `Homer`
 
-Please see this readme for more details on each step.
+Please see this readme for details on each step.
 
 ## Check read quality
 First, make a prefixes text file containing the names of samples you want to process (all samples can be run together regardless of genome):
