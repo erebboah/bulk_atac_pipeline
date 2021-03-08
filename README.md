@@ -11,9 +11,10 @@ In 6 bash scripts, this pipeline does the following:
 
 
 ## Check read quality
-First, make a prefixes text file containing the names of samples you want to process:
+First, make a prefixes text file containing the names of samples you want to process (all samples can be run together regardless of genome):
 ```
-ls AT_AC*S*_R1.fastq.gz | sed 's/_R1.fastq.gz//' > ../prefixes.txt
+cd data/
+ls *_R1.fastq.gz | sed 's/_R1.fastq.gz//' > ../prefixes_all.txt
 ```
 
 To run `fastqc` v. 0.11.9:
@@ -35,7 +36,13 @@ AT_AC_6_S4/
 ```
 
 ## Map, remove duplicates, and shift reads
-First, make sure there is a `bowtie2` indexed M chromosome and reference genome. If not, make one from a reference fasta:
+First, make a genome-specific prefixes text file containing the names of samples you want to map:
+```
+cd data/
+ls AT_AC_*_S*_R1.fastq.gz | sed 's/_R1.fastq.gz//' > ../prefixes_hg38.txt
+```
+
+Next, make sure there is a `bowtie2` indexed M chromosome and reference genome. If not, make one from a reference fasta:
 ```
 cd ref/chrM/
 module load bowtie2/2.4.1
@@ -48,14 +55,14 @@ module load bowtie2/2.4.1
 bowtie2-build GRCh38_encode.fasta hg38
 ```
 
-Next, make sure `Homer` is installed. If not, install v. 4.11 from [Anaconda](https://anaconda.org/bioconda/homer). 
+Finally, make sure `Homer` is installed. If not, install v. 4.11 from [Anaconda](https://anaconda.org/bioconda/homer). 
 ```
 conda install -c bioconda homer
 ```
 
 To run:
 ```
-sbatch map_step2.sh
+sbatch map_hg38_step2.sh
 ```
 
 The outputs are in a subdirectory called `mapped`:
@@ -70,8 +77,10 @@ AT_AC_6_S4/
         ...
 ```
 
+There is another mapping script called `map_mm10_step2.sh` that aligns to the mm10 genome.
+
 ## Call peaks with Homer
-Call both 150bp and 500bp peaks.
+Call both 150bp and 500bp peaks. Makes use of `prefixes_all.txt` files since I am processing both human and mouse samples but either the file or script can be edited.
 
 To run:
 ```
