@@ -48,7 +48,7 @@ module load bowtie2/2.4.1
 bowtie2-build GRCh38_encode.fasta hg38
 ```
 
-Next, make sure `Homer` is installed. If not, install v. 4.11 from (anaconda)[https://anaconda.org/bioconda/homer]. 
+Next, make sure `Homer` is installed. If not, install v. 4.11 from [Anaconda](https://anaconda.org/bioconda/homer). 
 ```
 conda install -c bioconda homer
 ```
