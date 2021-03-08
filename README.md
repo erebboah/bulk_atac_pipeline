@@ -35,6 +35,13 @@ AT_AC_6_S4/
 ```
 
 ## Map, remove duplicates, and shift reads
+First, make sure there is a bowtie2 indexed reference genome. If not, make one from a reference fasta:
+```
+cd ref/
+module load bowtie/2.4.1
+bowtie2-build GRCh38_encode.fasta hg38
+```
+
 To run:
 ```
 sbatch map_step2.sh
