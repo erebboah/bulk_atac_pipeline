@@ -3,7 +3,7 @@ The goal of week 10 in Eco Evo 283 was to use what we have learned to do a small
 
 I am adapting a bulk ATAC-seq pipeline written for old HPC using outdated software to one that will work using HPC3 with newer packages.
 
-Original scripts graciously provided by Dr. Murad and PhD candidate Klebea Carvalho.
+Original scripts graciously provided by Dr. Murad and PhD candidate Klebea Carvalho (Mortazavi lab).
 
 In 6 bash scripts, this pipeline does the following:
 1) Check read quality with `fastqc`
