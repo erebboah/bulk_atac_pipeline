@@ -1,11 +1,14 @@
 # Bulk ATAC-seq Analysis Pipeline
+The goal of week 10 in Eco Evo 283 was to use what we have learned to do a small project relevant to our bioinformatics interests. 
+I am adapting a bulk ATAC-seq pipeline written for SGE using outdated software to one that will work using HPC3's slurm scheduler with newer packages.
+
 Original scripts graciously provided by Dr. Murad and PhD candidate Klebea Carvalho.
 
 In 6 bash scripts, this pipeline does the following:
 1) Check read quality with `fastqc`
 2) Map reads with `bowtie2`, remove duplicates with `Picard`, and shift reads due to transposase binding
 3) Call 150bp and 500bp peaks with `Homer`
-4) Run [IDR](https://github.com/karmel/homer-idr) (Irreproducibility Discovery Rate) on replicates
+4) Run [IDR](https://github.com/karmel/homer-idr) (Irreproducibility Discovery Rate) on replicates (UPDATE THIS)
 5) Merge peaks
 6) Make counts matrix with `Homer`
 
