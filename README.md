@@ -57,3 +57,23 @@ To run:
 ```
 sbatch map_step2.sh
 ```
+
+The outputs are in a subdirectory called `mapped`:
+```
+AT_AC_5_S3/
+    fastqc/
+    mapped/
+        stuff
+AT_AC_6_S4/
+    fastqc/
+    mapped/
+        ...
+```
+
+## Call peaks with Homer
+Call both 150bp and 500bp peaks.
+
+To run:
+```
+sbatch peaks_step3.sh
+```
