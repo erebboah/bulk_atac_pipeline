@@ -13,7 +13,7 @@ In 6 bash scripts, this pipeline does the following:
 ## Check read quality
 First, make a prefixes text file containing the names of samples you want to process:
 ```
-ls AT_AC*_R1.fastq.gz | sed 's/_R1.fastq.gz//' > ../prefixes.txt
+ls AT_AC*S*_R1.fastq.gz | sed 's/_R1.fastq.gz//' > ../prefixes.txt
 ```
 
 To run `fastqc` v. 0.11.9:
