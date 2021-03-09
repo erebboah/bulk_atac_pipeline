@@ -8,7 +8,7 @@ Original scripts graciously provided by Dr. Rabi Murad and PhD candidate Klebea 
 In 6 bash scripts, this pipeline does the following in summary:
 1) Check read quality with `fastqc`
 2) Map reads with `bowtie2`, remove duplicates with `Picard`, and shift reads due to transposase binding
-3) Call 150bp and 500bp peaks with `Homer`
+3) Call 150bp and 500bp peaks with `Homer` (Maybe update??? compare to MACS2?)
 4) Run [IDR](https://github.com/karmel/homer-idr) (Irreproducibility Discovery Rate) on replicates (UPDATE THIS)
 5) Merge peaks
 6) Make counts matrix with `Homer`
@@ -75,14 +75,34 @@ The outputs are in a subdirectory called `mapped`:
 AT_AC_5_S3/
     fastqc/
     mapped/
-        stuff
+        AT_AC_5_S3.bam
+        AT_AC_5_S3.bigWig
+        AT_AC_5_S3_chrM.bam
+        AT_AC_5_S3.duplicates_metric.txt
+        AT_AC_5_S3_shifted_reads_sorted.bam
+        AT_AC_5_S3_shifted_reads_sorted.bam.bai
+        AT_AC_5_S3.sort.bam
+        AT_AC_5_S3.sort.nodup.bam
+        AT_AC_5_S3.sort.nodup.header.sam
+        AT_AC_5_S3_unaligned.fastq.1.gz
+        AT_AC_5_S3_unaligned.fastq.2.gz
+        homer-tags/
+            chr10.tags.tsv
+            chr11.tags.tsv
+            ...
+            tagAutocorrelation.txt
+            tagCountDistribution.txt
+            tagInfo.txt
+            tagLengthDistribution.txt
 AT_AC_6_S4/
     fastqc/
     mapped/
         ...
 ```
 
-There is another mapping script called `map_mm10_step2.sh` that aligns to the mm10 genome.
+The directory `homer-tags` will be used during peak calling.
+
+There is another mapping script called `map_mm10_step2.sh` that aligns to the mm10 genome with identical output files.
 
 ## Call peaks with Homer
 Call both 150bp and 500bp peaks. Makes use of `prefixes_all.txt` files since I am processing both human and mouse samples but either the file or script can be edited.
@@ -91,3 +111,21 @@ To run:
 ```
 sbatch peaks_step3.sh
 ```
+
+The outputs are in a subdirectory called `peaks`:
+```
+AT_AC_5_S3/
+    fastqc/
+    mapped/
+    peaks/
+        AT_AC_5_S3.150bp.peaks.txt
+        AT_AC_5_S3.500bp.peaks.txt
+AT_AC_6_S4/
+    fastqc/
+    mapped/
+    peaks/
+        AT_AC_6_S4.150bp.peaks.txt
+        AT_AC_6_S4.500bp.peaks.txt
+```
+
+## Run IDR
