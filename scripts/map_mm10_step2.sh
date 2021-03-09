@@ -19,7 +19,9 @@ module load samtools/1.10
 module load picard-tools/1.87
 module load java/1.8.0
 module load python/3.8.0
+module load ucsc-tools/v393
 
+mkdir ${inpath}${prefix}
 mkdir ${inpath}${prefix}/mapped/
 
 # First map the reads to mitochondrial chrom only
