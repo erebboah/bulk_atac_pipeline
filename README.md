@@ -1,25 +1,40 @@
 # Bulk ATAC-seq Analysis Pipeline
 The goal of week 10 in Eco Evo 283 was to use what we have learned to do a small project relevant to our bioinformatics interests. 
 
-I am adapting a bulk ATAC-seq pipeline written for old HPC using outdated software to one that will work using HPC3 with newer packages.
+I am adapting a bulk ATAC-seq pipeline written for old HPC using to one that will work using HPC3 in a more polished pipeline format.
 
 Original scripts graciously provided by Dr. Rabi Murad and PhD candidate Klebea Carvalho (Mortazavi lab).
 
 In 6 bash scripts, this pipeline does the following in summary:
 1) Check read quality with `fastqc`
 2) Map reads with `bowtie2`, remove duplicates with `Picard`, and shift reads due to transposase binding
-3) Call 150bp and 500bp peaks with `Homer` (Maybe update??? compare to MACS2?)
-4) Run [IDR](https://github.com/karmel/homer-idr) (Irreproducibility Discovery Rate) on replicates (UPDATE THIS)
+3) Call 150bp and 500bp peaks with `Homer`
+4) Run [IDR](https://github.com/karmel/homer-idr) (Irreproducibility Discovery Rate) on replicates
 5) Merge peaks
 6) Make counts matrix with `Homer`
 
 Please see [this](https://github.com/erebboah/bulk_atac_pipeline/tree/main/scripts) readme for details on each step.
 
 ## Check read quality
-First, make a prefixes text file containing the names of samples you want to process (all samples can be run together regardless of genome):
+First, make a prefixes text file containing the names of samples you want to process.
+
+I am working with 4 samples: 2 replicates of C2C12 myoblasts built by me and my undergrad Isaryhia Rodriguez. The libraries were built using the [Active Motif kit](https://www.activemotif.com/documents/2182.pdf), cat. 53150, and sequenced on a NextSeq 500 with 50 million reads per paired-end 43x43 library. 
+
+```
+data/
+    C2C12_MB_ER1_R1.fastq.gz
+    C2C12_MB_ER1_R2.fastq.gz
+    C2C12_MB_ER2_R1.fastq.gz
+    C2C12_MB_ER2_R2.fastq.gz
+    C2C12_MB_IR1_R1.fastq.gz
+    C2C12_MB_IR1_R2.fastq.gz
+    C2C12_MB_IR2_R1.fastq.gz
+    C2C12_MB_IR2_R2.fastq.gz
+```
+
 ```
 cd data/
-ls *_R1.fastq.gz | sed 's/_R1.fastq.gz//' > ../prefixes_all.txt
+ls *_R1.fastq.gz | sed 's/_R1.fastq.gz//' > ../prefixes.txt
 ```
 
 To run `fastqc` v. 0.11.9:
@@ -29,63 +44,67 @@ sbatch fastqc_step1.sh
 
 All pipeline outputs are in a directory with the same sample names as in the prefixes file:
 ```
-AT_AC_5_S3/
+C2C12_MB_ER1/
     fastqc/
-        AT_AC_5_S3_R1_fastqc.html
-        AT_AC_5_S3_R1_fastqc.zip
-        AT_AC_5_S3_R2_fastqc.html
-        AT_AC_5_S3_R2_fastqc.zip
-AT_AC_6_S4/
+        C2C12_MB_ER1_R1_fastqc.html
+        C2C12_MB_ER1_R1_fastqc.zip
+        C2C12_MB_ER1_R2_fastqc.html
+        C2C12_MB_ER1_R2_fastqc.zip
+C2C12_MB_ER2/
     fastqc/
      ...     
 ```
 
+The `fastqc` outputs are also hosted on our [lab website](/var/www/html/erebboah/bulk_atac/C2C12_MB). 
+
 ## Map, remove duplicates, and shift reads
-First, make a genome-specific prefixes text file containing the names of samples you want to map:
-```
-cd data/
-ls AT_AC_*_S*_R1.fastq.gz | sed 's/_R1.fastq.gz//' > ../prefixes_hg38.txt
-```
+Make sure there is a `bowtie2` indexed M chromosome and reference genome. If not, make one from a [reference fasta](https://www.encodeproject.org/data-standards/reference-sequences/) and [M chromosome fasta](http://hgdownload.soe.ucsc.edu/goldenPath/mm10/chromosomes/):
 
-Next, make sure there is a `bowtie2` indexed M chromosome and reference genome. If not, make one from a reference fasta:
+For mouse:
 ```
-cd ref/chrM/
+cd ref/chrM_mm10/
 module load bowtie2/2.4.1
-bowtie2-build Homo_sapiens.GRCh38.dna.chromosome.MT.fa chrM
+bowtie2-build mm10_chrM.fa chrM
 ```
 
 ```
-cd ref/hg38/
+cd ref/mm10/
 module load bowtie2/2.4.1
-bowtie2-build GRCh38_encode.fasta hg38
+bowtie2-build mm10_no_alt_analysis_set_ENCODE.fasta mm10
 ```
 
-Finally, make sure `Homer` is installed. If not, install v. 4.11 from [Anaconda](https://anaconda.org/bioconda/homer). 
+Make sure `Homer` is installed. If not, install v. 4.11 from [Anaconda](https://anaconda.org/bioconda/homer). 
 ```
 conda install -c bioconda homer
 ```
 
+Also install genomes:
+```
+perl /data/homezvol2/$USER/miniconda3/share/homer/.//configureHomer.pl -install mm10
+perl /data/homezvol2/$USER/miniconda3/share/homer/.//configureHomer.pl -install hg38
+```
+
 To run:
 ```
-sbatch map_hg38_step2.sh
+sbatch map_step2.sh ../ref/mm10/mm10 ../ref/chrM_mm10/chrM
 ```
 
 The outputs are in a subdirectory called `mapped`:
 ```
-AT_AC_5_S3/
+C2C12_MB_ER1/
     fastqc/
     mapped/
-        AT_AC_5_S3.bam
-        AT_AC_5_S3.bigWig
-        AT_AC_5_S3_chrM.bam
-        AT_AC_5_S3.duplicates_metric.txt
-        AT_AC_5_S3_shifted_reads_sorted.bam
-        AT_AC_5_S3_shifted_reads_sorted.bam.bai
-        AT_AC_5_S3.sort.bam
-        AT_AC_5_S3.sort.nodup.bam
-        AT_AC_5_S3.sort.nodup.header.sam
-        AT_AC_5_S3_unaligned.fastq.1.gz
-        AT_AC_5_S3_unaligned.fastq.2.gz
+        C2C12_MB_ER1.bam
+        C2C12_MB_ER1.bigWig
+        C2C12_MB_ER1_chrM.bam
+        C2C12_MB_ER1.duplicates_metric.txt
+        C2C12_MB_ER1_shifted_reads_sorted.bam
+        C2C12_MB_ER1_shifted_reads_sorted.bam.bai
+        C2C12_MB_ER1.sort.bam
+        C2C12_MB_ER1.sort.nodup.bam
+        C2C12_MB_ER1.sort.nodup.header.sam
+        C2C12_MB_ER1_unaligned.fastq.1.gz
+        AC2C12_MB_ER1_unaligned.fastq.2.gz
         homer-tags/
             chr10.tags.tsv
             chr11.tags.tsv
@@ -94,15 +113,13 @@ AT_AC_5_S3/
             tagCountDistribution.txt
             tagInfo.txt
             tagLengthDistribution.txt
-AT_AC_6_S4/
+C2C12_MB_ER2/
     fastqc/
     mapped/
         ...
 ```
 
 The directory `homer-tags` will be used during peak calling.
-
-There is another mapping script called `map_mm10_step2.sh` that aligns to the mm10 genome with identical output files.
 
 ## Call peaks with Homer
 Call both 150bp and 500bp peaks. Makes use of `prefixes_all.txt` files since I am processing both human and mouse samples but either the file or script can be edited.
