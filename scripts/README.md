@@ -8,6 +8,8 @@ Makes a sample folder in the main directory (`/share/crsp/lab/seyedam/share/newA
 ### map_step2.sh 
 Requires bowtie2/2.4.1, samtools/1.10, picard-tools/1.87, java/1.8.0, python/3.8.0, and ucsc-tools/v393, and paired reads with `_R1.fastq.gz` and `_R2.fastq.gz` file extensions.
 
+Two inputs, in order, are paths pointing to 1) a `bowtie2` reference and 2) a `bowtie2` chromosome M reference.
+
 Does NOT require `fastqc_step1.sh` to be run first.
 
 First maps to the mitochondrial chromosome to remove mitochondrial reads, resulting in `sample_chrM.bam`.
