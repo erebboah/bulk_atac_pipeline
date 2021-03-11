@@ -144,6 +144,7 @@ C2C12_MB_ER2/
     peaks/
         C2C12_MB_ER2.150bp.peaks.txt
         C2C12_MB_ER2.500bp.peaks.txt
+    ...
 ```
 
 ## Run IDR
