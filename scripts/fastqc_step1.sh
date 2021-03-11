@@ -3,13 +3,13 @@
 #SBATCH -A SEYEDAM_LAB            ## account to charge 
 #SBATCH -p standard               ## partition/queue name
 #SBATCH --nodes=1                 ## (-N) number of nodes to use
-#SBATCH --array=1-5               ## number of tasks to launch (number of samples)
+#SBATCH --array=1-4               ## number of tasks to launch (number of samples)
 #SBATCH --cpus-per-task=1         ## number of cores the job needs
 #SBATCH --output=checkreads-%J.out ## output log file
 #SBATCH --error=checkreads-%J.err ## error log file
 
-inpath="/share/crsp/lab/seyedam/share/newATAC/"
-file=$inpath"prefixes_all.txt" # sample prefix file containing the names for the samples you want to process
+inpath="/share/crsp/lab/seyedam/erebboah/bulk_atac_pipeline/"
+file=$inpath"prefixes.txt" # sample prefix file containing the names for the samples you want to process
 prefix=`head -n $SLURM_ARRAY_TASK_ID  ${file} | tail -n 1`
  
 module load fastqc/0.11.9
