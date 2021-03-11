@@ -5,7 +5,7 @@ Takes in a file of sample names (`prefixes_all.txt`) and launches an array of jo
 
 Makes a sample folder in the main directory (`/share/crsp/lab/seyedam/share/newATAC/`) that will store results.
 
-### map_hg38_step2.sh and map_mm10_step2.sh
+### map_step2.sh 
 Requires bowtie2/2.4.1, samtools/1.10, picard-tools/1.87, java/1.8.0, python/3.8.0, and ucsc-tools/v393, and paired reads with `_R1.fastq.gz` and `_R2.fastq.gz` file extensions.
 
 Does NOT require `fastqc_step1.sh` to be run first.
