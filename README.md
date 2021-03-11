@@ -10,8 +10,7 @@ In 6 bash scripts, this pipeline does the following in summary:
 2) Map reads with `bowtie2`, remove duplicates with `Picard`, and shift reads due to transposase binding
 3) Call 150bp and 500bp peaks with `Homer`
 4) Run [IDR](https://github.com/karmel/homer-idr) (Irreproducibility Discovery Rate) on replicates
-5) Merge peaks
-6) Make counts matrix with `Homer`
+5) Merge peaks, remove regions in no-pass list, and make counts matrix with `Homer`
 
 Please see [this](https://github.com/erebboah/bulk_atac_pipeline/tree/main/scripts) readme for details on each step.
 
