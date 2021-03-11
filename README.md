@@ -57,6 +57,8 @@ C2C12_MB_ER2/
 The `fastqc` outputs are also hosted on our [lab website](/var/www/html/erebboah/bulk_atac/C2C12_MB). 
 
 ## Map, remove duplicates, and shift reads
+If a prefixes file has not been made, make one now of the samples you want to process.
+
 Make sure there is a `bowtie2` indexed M chromosome and reference genome. If not, make one from a [reference fasta](https://www.encodeproject.org/data-standards/reference-sequences/) and [M chromosome fasta](http://hgdownload.soe.ucsc.edu/goldenPath/mm10/chromosomes/):
 
 For mouse:
@@ -121,7 +123,7 @@ C2C12_MB_ER2/
 The directory `homer-tags` will be used during peak calling.
 
 ## Call peaks with Homer
-Call both 150bp and 500bp peaks. Makes use of `prefixes_all.txt` files since I am processing both human and mouse samples but either the file or script can be edited.
+Call both 150bp and 500bp peaks.
 
 To run:
 ```
@@ -130,18 +132,18 @@ sbatch peaks_step3.sh
 
 The outputs are in a subdirectory called `peaks`:
 ```
-AT_AC_5_S3/
+C2C12_MB_ER1/
     fastqc/
     mapped/
     peaks/
-        AT_AC_5_S3.150bp.peaks.txt
-        AT_AC_5_S3.500bp.peaks.txt
-AT_AC_6_S4/
+        C2C12_MB_ER1.150bp.peaks.txt
+        C2C12_MB_ER1.500bp.peaks.txt
+C2C12_MB_ER2/
     fastqc/
     mapped/
     peaks/
-        AT_AC_6_S4.150bp.peaks.txt
-        AT_AC_6_S4.500bp.peaks.txt
+        C2C12_MB_ER2.150bp.peaks.txt
+        C2C12_MB_ER2.500bp.peaks.txt
 ```
 
 ## Run IDR
