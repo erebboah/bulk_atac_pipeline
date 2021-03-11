@@ -59,7 +59,7 @@ The `fastqc` outputs are also hosted on our [lab website](/var/www/html/erebboah
 ## Map, remove duplicates, and shift reads
 If a prefixes file has not been made, make one now of the samples you want to process.
 
-Make sure there is a `bowtie2` indexed M chromosome and reference genome. If not, make one from a [reference fasta](https://www.encodeproject.org/data-standards/reference-sequences/) and [M chromosome fasta](http://hgdownload.soe.ucsc.edu/goldenPath/mm10/chromosomes/):
+Make sure there is a `bowtie2` indexed M chromosome and reference genome. If not, make one from an [M chromosome fasta](http://hgdownload.soe.ucsc.edu/goldenPath/mm10/chromosomes/) and [reference fasta](https://www.encodeproject.org/data-standards/reference-sequences/).
 
 For mouse:
 ```
