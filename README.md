@@ -57,7 +57,7 @@ C2C12_MB_ER2/
 The `fastqc` outputs are also hosted on our [lab website](/var/www/html/erebboah/bulk_atac/C2C12_MB). 
 
 ## Map, remove duplicates, and shift reads
-If a prefixes file has not been made, make one now of the samples you want to process.
+If a `prefixes.txt` file has not been made, make one now of the samples you want to process.
 
 Make sure there is a `bowtie2` indexed M chromosome and reference genome. If not, make one from an [M chromosome fasta](http://hgdownload.soe.ucsc.edu/goldenPath/mm10/chromosomes/) and [reference fasta](https://www.encodeproject.org/data-standards/reference-sequences/).
 
@@ -123,7 +123,7 @@ C2C12_MB_ER2/
 The directory `homer-tags` will be used during peak calling.
 
 ## Call peaks with Homer
-Call both 150bp and 500bp peaks.
+This script also makes use of the `prefixes.txt` file and requires the `homer-tags` directory. It calls both 150bp and 500bp peaks using `Homer`.
 
 To run:
 ```
