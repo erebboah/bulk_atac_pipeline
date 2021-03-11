@@ -24,7 +24,7 @@ bowtie2 --very-sensitive -X 3000 --no-discordant -k 6 -p 16 -x genome -1 sample_
 
 The resulting bam file is sorted (`sample.sort.bam`) and PCR duplicates removed with `picard-tools` (`sample.sort.nodup.bam`). 
 
-A custom script is used to shift reads according to transposon binding. Reads aligning to the + strand are offset by +4 bps, and reads aligning to the – strand are offset −5 bps (`sample_shifted_reads.sam`). 
+A custom script (`shift.reads.py`) is used to shift reads according to transposon binding. Reads aligning to the + strand are offset by +4 bps, and reads aligning to the – strand are offset −5 bps (`sample_shifted_reads.sam`). 
 
 The script has to make a `sam` header (`sample.sort.nodup.header.sam`) in order to convert the `sam` to `bam` and finally sort (`sample_shifted_reads_sorted.bam`).
 
