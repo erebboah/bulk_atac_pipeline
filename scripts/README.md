@@ -1,7 +1,7 @@
 ### fastqc_step1.sh 
 Requires fastqc/0.11.9 and paired reads with `_R1.fastq.gz` and `_R2.fastq.gz` file extensions.
 
-Takes in a file of sample names (`prefixes_all.txt`) and launches an array of jobs, one per sample. Adjust number of jobs with `--array=1-5`.
+Takes in a file of sample names (`prefixes_all.txt`) and launches an array of jobs, one per sample. Adjust number of jobs with `--array=1-N`.
 
 Makes a sample folder in the main directory (`/share/crsp/lab/seyedam/share/newATAC/`) that will store results.
 
