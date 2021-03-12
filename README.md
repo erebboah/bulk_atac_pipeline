@@ -148,3 +148,22 @@ C2C12_MB_ER2/
 ```
 
 ## Run IDR
+This script makes use of the `.150bp.peaks.txt` and `.500bp.peaks.txt` files from the previous step.
+
+To run per sample, with two replicates each:
+```
+sbatch idr_step4.sh C2C12_MB_ER1 C2C12_MB_ER2 C2C12_MB_ER
+```
+
+```
+sbatch idr_step4.sh C2C12_MB_IR1 C2C12_MB_IR2 C2C12_MB_IR
+```
+
+The outputs are in a subdirectory called `peaks`:
+```
+C2C12_MB/
+    peaks150/
+        C2C12_MB_ER1.150bp.peaks.txt
+        C2C12_MB_ER2.150bp.peaks.txt
+    peaks500/
+```
