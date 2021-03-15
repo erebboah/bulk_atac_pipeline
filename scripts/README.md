@@ -33,3 +33,14 @@ The `sam` file is removed to save space but intermediate `bam` files are kept.
 A [tag directory](http://homer.ucsd.edu/homer/ngs/tagDir.html) is made with `homer` which will be used for peak calling. 
 
 Finally, `bigwig` files are made using `bamCoverage` and the final shifted, sorted `bam` file with the following parameters: `--binSize 30 -e -of bigwig --scaleFactor 1.0 --normalizeUsing RPKM -p 16`
+
+### peaks_step3.sh
+Requires `homer` and the `homer-tags` folder created in the previous step.
+
+Peaks with a p-value over local tag count of up to .1 and overall Poisson p-value of up to .1 pass filters. Peaks must also be greater than 50bp apart from one another and the tag density at peaks to be 4-fold greater than in the surrounding 50kb region. We call 150bp and 500bp peaks.
+```
+findPeaks homer-tags -LP .1 -poisson .1 -style factor -size 150 -minDist 50 -localSize 50000
+findPeaks homer-tags -LP .1 -poisson .1 -style factor -size 500 -minDist 50 -localSize 50000
+```
+
+### idr_step4.sh
