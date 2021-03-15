@@ -1,7 +1,7 @@
 ## net.sf.picard.metrics.StringHeader
 # net.sf.picard.sam.MarkDuplicates INPUT=[/share/crsp/lab/seyedam/erebboah/bulk_atac_pipeline/C2C12_MB_ER1/mapped/C2C12_MB_ER1.sort.bam] OUTPUT=/share/crsp/lab/seyedam/erebboah/bulk_atac_pipeline/C2C12_MB_ER1/mapped/C2C12_MB_ER1.sort.nodup.bam METRICS_FILE=/share/crsp/lab/seyedam/erebboah/bulk_atac_pipeline/C2C12_MB_ER1/mapped/C2C12_MB_ER1.duplicates_metric.txt REMOVE_DUPLICATES=true    PROGRAM_RECORD_ID=MarkDuplicates PROGRAM_GROUP_NAME=MarkDuplicates ASSUME_SORTED=false MAX_SEQUENCES_FOR_DISK_READ_ENDS_MAP=50000 MAX_FILE_HANDLES_FOR_READ_ENDS_MAP=8000 SORTING_COLLECTION_SIZE_RATIO=0.25 READ_NAME_REGEX=[a-zA-Z0-9]+:[0-9]:([0-9]+):([0-9]+):([0-9]+).* OPTICAL_DUPLICATE_PIXEL_DISTANCE=100 VERBOSITY=INFO QUIET=false VALIDATION_STRINGENCY=STRICT COMPRESSION_LEVEL=5 MAX_RECORDS_IN_RAM=500000 CREATE_INDEX=false CREATE_MD5_FILE=false
 ## net.sf.picard.metrics.StringHeader
-# Started on: Thu Mar 11 14:05:43 PST 2021
+# Started on: Mon Mar 15 13:49:43 PDT 2021
 
 ## METRICS CLASS	net.sf.picard.sam.DuplicationMetrics
 LIBRARY	UNPAIRED_READS_EXAMINED	READ_PAIRS_EXAMINED	UNMAPPED_READS	UNPAIRED_READ_DUPLICATES	READ_PAIR_DUPLICATES	READ_PAIR_OPTICAL_DUPLICATES	PERCENT_DUPLICATION	ESTIMATED_LIBRARY_SIZE
