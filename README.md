@@ -201,9 +201,15 @@ C2C12_MB_ER/
             C2C12_MB_ER2.150bp.peaks.txt
     peaks500/
         ...
+        idr-output/
+            combined.peaks-top-set.txt
 C2C12_MB_IR/
     peaks150/
         ...
+        idr-output/
+            combined.peaks-top-set.txt
     peaks500/ 
         ...
+        idr-output/
+            combined.peaks-top-set.txt
 ```
