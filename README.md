@@ -278,6 +278,6 @@ I uploaded the `bigWig` files from the mapping step to the genome browser using 
 
 The track can be loaded by clicking [here](https://genome.ucsc.edu/s/erebboah/C2C12_MB_bulkATAC).
 
-This screenshot shows the 4 C2C12 myoblast bulk ATAC samples at the Myod1 locus, a myogenic transcription factor we expect to be expressed in these cells.
+This screenshot shows the 4 C2C12 myoblast bulk ATAC samples at the Myod1 locus, a myogenic transcription factor we expect to be expressed in these cells. One replicate `C2C12_MB_IR1` looks like it has slightly less signal at the promoter than the other 3 reps.
 
 ![myod1](https://github.com/erebboah/bulk_atac_pipeline/blob/main/figures/myod1_atac.png?raw=true)
