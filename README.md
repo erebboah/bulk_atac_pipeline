@@ -229,7 +229,7 @@ sbatch merge_peaks_step5.sh ../ref/mm10-nopasslist.v2.bed C2C12_MB
 
 The output is in a new folder with the name passed as the second argument to the script:
 ```
-C2C12_MB
+C2C12_MB/
     merged.peaks.bed
     merged.peaks.filt.bed
     merged.peaks.filt.final.bed
