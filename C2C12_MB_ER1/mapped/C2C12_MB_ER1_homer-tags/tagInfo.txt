@@ -1,0 +1,34 @@
+name	Unique Positions	Total Tags
+genome	25837594	22614973.0
+fragmentLengthEstimate=90		
+peakSizeEstimate=167		
+tagsPerBP=0.012839		
+averageTagsPerPosition=0.457		
+medianTagsPerPosition=0		
+averageTagLength=42.903		
+gsizeEstimate=1761493928		
+averageFragmentGCcontent=-1.000		
+chr1	2596556	2192938.0
+chr2	2713199	2311809.0
+chr3	1925945	1630982.0
+chr4	2263837	1953956.0
+chr10	1877522	1615122.0
+chr11	2591856	2406559.0
+chr12	1506197	1295442.0
+chr13	1680231	1408891.0
+chr14	1387573	1176381.0
+chr15	2090522	1956231.0
+chr16	1260775	1057762.0
+chr17	1602906	1559491.0
+chr18	1222264	1030248.0
+chr19	1115006	1013662.0
+chr1_GL456210_random	60	30.0
+chr1_GL456211_random	166	83.0
+chr1_GL456212_random	82	41.0
+chr1_GL456213_random	6	3.0
+chr1_GL456221_random	32	16.0
+chr4_GL456216_random	2830	5311.0
+chr4_GL456350_random	2	1.0
+chr4_JH584292_random	23	12.0
+chr4_JH584293_random	4	2.0
+cmd=makeTagDirectory /share/crsp/lab/seyedam/erebboah/bulk_atac_pipeline/C2C12_MB_ER1/mapped/C2C12_MB_ER1_homer-tags /share/crsp/lab/seyedam/erebboah/bulk_atac_pipeline/C2C12_MB_ER1/mapped/C2C12_MB_ER1_shifted_reads_sorted.bam -format sam		
