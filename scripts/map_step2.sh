@@ -3,7 +3,7 @@
 #SBATCH -A SEYEDAM_LAB            ## account to charge 
 #SBATCH -p standard               ## partition/queue name
 #SBATCH --nodes=1                 ## (-N) number of nodes to use
-#SBATCH --array=1-4               ## number of tasks to launch (number of samples)
+#SBATCH --array=1-2               ## number of tasks to launch (number of samples)
 #SBATCH --cpus-per-task=16         ## number of cores the job needs
 #SBATCH --output=align-%J.out ## output log file
 #SBATCH --error=align-%J.err ## error log file
@@ -62,7 +62,7 @@ rm ${inpath}${prefix}/mapped/${prefix}_shifted_reads.bam
 samtools index ${inpath}${prefix}/mapped/${prefix}_shifted_reads_sorted.bam
 
 # Make Homer tag directory
-makeTagDirectory ${inpath}${prefix}/mapped/homer-tags ${inpath}${prefix}/mapped/${prefix}_shifted_reads_sorted.bam -format sam
+makeTagDirectory ${inpath}${prefix}/mapped/${prefix}_homer-tags ${inpath}${prefix}/mapped/${prefix}_shifted_reads_sorted.bam -format sam
 
 # Generate bigWig file - for initial visualization of the data in the genome browser
 bamCoverage --bam ${inpath}${prefix}/mapped/${prefix}_shifted_reads_sorted.bam -o ${inpath}${prefix}/mapped/${prefix}.bigWig --binSize 30 -e -of bigwig --scaleFactor 1.0 --normalizeUsing RPKM -p 16

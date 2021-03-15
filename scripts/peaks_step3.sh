@@ -14,6 +14,6 @@ prefix=`head -n $SLURM_ARRAY_TASK_ID  ${file} | tail -n 1`
 
 mkdir ${inpath}${prefix}/peaks
  
-findPeaks ${inpath}${prefix}/mapped/homer-tags -LP .1 -poisson .1 -style factor -size 150 -minDist 50 -localSize 50000 -o ${inpath}${prefix}/peaks/${prefix}.150bp.peaks.txt
+findPeaks ${inpath}${prefix}/mapped/${prefix}_homer-tags -LP .1 -poisson .1 -style factor -size 150 -minDist 50 -localSize 50000 -o ${inpath}${prefix}/peaks/${prefix}.150bp.peaks.txt
 
-findPeaks ${inpath}${prefix}/mapped/homer-tags -LP .1 -poisson .1 -style factor -size 500 -minDist 50 -localSize 50000 -o ${inpath}${prefix}/peaks/${prefix}.500bp.peaks.txt
+findPeaks ${inpath}${prefix}/mapped/${prefix}_homer-tags -LP .1 -poisson .1 -style factor -size 500 -minDist 50 -localSize 50000 -o ${inpath}${prefix}/peaks/${prefix}.500bp.peaks.txt
