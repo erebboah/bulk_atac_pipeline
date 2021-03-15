@@ -105,8 +105,8 @@ C2C12_MB_ER1/
         C2C12_MB_ER1.sort.nodup.bam
         C2C12_MB_ER1.sort.nodup.header.sam
         C2C12_MB_ER1_unaligned.fastq.1.gz
-        AC2C12_MB_ER1_unaligned.fastq.2.gz
-        homer-tags/
+        C2C12_MB_ER1_unaligned.fastq.2.gz
+        C2C12_MB_ER1_homer-tags/
             chr10.tags.tsv
             chr11.tags.tsv
             ...
