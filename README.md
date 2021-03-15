@@ -159,11 +159,10 @@ sbatch idr_step4.sh C2C12_MB_ER1 C2C12_MB_ER2 C2C12_MB_ER
 sbatch idr_step4.sh C2C12_MB_IR1 C2C12_MB_IR2 C2C12_MB_IR
 ```
 
-The outputs are in a subdirectory called `peaks`:
+The outputs are in a new directory with the sample name:
 ```
-C2C12_MB/
-    peaks150/
-        C2C12_MB_ER1.150bp.peaks.txt
-        C2C12_MB_ER2.150bp.peaks.txt
-    peaks500/
+C2C12_MB_ER/
+    
+C2C12_MB_IR/
+    
 ```
