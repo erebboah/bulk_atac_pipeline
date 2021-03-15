@@ -246,7 +246,27 @@ I like to output the final matrix in the same folder as the final peak set.
 annotatePeaks.pl C2C12_MB/merged.peaks.filt.fixed.bed mm10 -raw -annStats C2C12_MB/annotationStats.txt -d C2C12_MB_ER1/mapped/C2C12_MB_ER1_homer-tags  C2C12_MB_ER2/mapped/C2C12_MB_ER2_homer-tags C2C12_MB_IR1/mapped/C2C12_MB_IR1_homer-tags C2C12_MB_IR2/mapped/C2C12_MB_IR2_homer-tags > C2C12_MB/matrix.raw.txt
 ```
 
-The header is unwieldly because it includes the path of all the tag directories; the columns (1-18) are as follows: 1) peakID, 2) chromosome, 3) start, 4) stop, 5) strand, 6) peak score, 7) focus ratio, 8) annotation, 9) detailed annotation, 10) distance to TSS, 11) nearest promoter, 12) promoter ID, 13) nearest unique..?, 14) nearest Refseq ID, 15) nearest Ensemble ID, 16) gene name, 17) gene alias, and 18) gene description, followed by columns of counts for the input tag directories in the order they were listed in columns 19 onward.
+The header is unwieldly because it includes the path of all the tag directories; the columns (1-18) are as follows: 
+1. peakID
+2. chromosome
+3. start
+4. stop
+5. strand
+6. peak score
+7. focus ratio
+8. annotation
+9. detailed annotation
+10. distance to TSS
+11. nearest promoter
+12. promoter ID
+13. nearest unique..?
+14. nearest Refseq ID
+15. nearest Ensemble ID
+16. gene name
+17. gene alias
+18. gene description,
+
+followed by columns of counts for the input tag directories in the order they were listed in columns 19 onward.
 
 I remove the header and keep columns of interest and the counts columns. Since I have 4 samples, I keep columns 19-22.
 ```
