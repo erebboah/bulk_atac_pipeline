@@ -1,0 +1,64 @@
+name	Unique Positions	Total Tags
+genome	31919908	27640355.0
+fragmentLengthEstimate=99		
+peakSizeEstimate=166		
+tagsPerBP=0.011219		
+averageTagsPerPosition=0.448		
+medianTagsPerPosition=0		
+averageTagLength=42.901		
+gsizeEstimate=2463805040		
+averageFragmentGCcontent=-1.000		
+chr1	2304363	1928986.0
+chr2	2413904	2038002.0
+chr3	1727211	1436777.0
+chr4	1969105	1699327.0
+chr5	1944905	1669664.0
+chr6	1697180	1400774.0
+chr7	1668018	1436172.0
+chr8	1837004	1668827.0
+chr9	1832185	1575548.0
+chr10	1675290	1424304.0
+chr11	2328669	2134518.0
+chr12	1323952	1132077.0
+chr13	1504305	1239811.0
+chr14	1208998	1022395.0
+chr15	1862361	1726435.0
+chr16	1127171	933115.0
+chr17	1425969	1377981.0
+chr18	1073521	898932.0
+chr19	987924	888614.0
+chrM	420	222.0
+chr1_GL456210_random	82	41.0
+chr1_GL456211_random	100	50.0
+chr1_GL456212_random	60	30.0
+chr1_GL456221_random	14	7.0
+chr4_GL456216_random	2561	4612.0
+chr4_GL456350_random	4	2.0
+chr4_JH584292_random	20	10.0
+chr4_JH584293_random	4	2.0
+chr4_JH584294_random	8	4.0
+chr4_JH584295_random	175	101.0
+chr5_GL456354_random	2	1.0
+chr5_JH584296_random	6	3.0
+chr5_JH584297_random	6	3.0
+chr5_JH584299_random	60	30.0
+chr7_GL456219_random	79	68.0
+chrUn_GL456239	396	203.0
+chrUn_GL456359	1273	1332.0
+chrUn_GL456360	148	74.0
+chrUn_GL456366	213	118.0
+chrUn_GL456367	112	56.0
+chrUn_GL456368	104	53.0
+chrUn_GL456370	36	18.0
+chrUn_GL456372	26	13.0
+chrUn_GL456378	62	31.0
+chrUn_GL456379	104	52.0
+chrUn_GL456381	144	72.0
+chrUn_GL456382	21	11.0
+chrUn_GL456383	551	305.0
+chrUn_GL456385	40	20.0
+chrUn_GL456387	305	157.0
+chrUn_GL456389	215	116.0
+chrUn_GL456390	196	102.0
+chrUn_GL456392	326	177.0
+cmd=makeTagDirectory /share/crsp/lab/seyedam/erebboah/bulk_atac_pipeline/C2C12_MB_ER2/mapped/C2C12_MB_ER2_homer-tags /share/crsp/lab/seyedam/erebboah/bulk_atac_pipeline/C2C12_MB_ER2/mapped/C2C12_MB_ER2_shifted_reads_sorted.bam -format sam		
