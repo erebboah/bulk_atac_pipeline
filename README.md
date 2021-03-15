@@ -10,7 +10,8 @@ In 5 bash scripts, this pipeline does the following in summary:
 2) Map reads with `bowtie2`, remove duplicates with `Picard`, and shift reads due to transposase binding
 3) Call 150bp and 500bp peaks with `Homer`
 4) Run [IDR](https://github.com/karmel/homer-idr) (Irreproducibility Discovery Rate) on replicates
-5) Merge peaks, remove regions in no-pass list, and make counts matrix with `Homer`
+5) Merge peaks and remove regions in no-pass list
+The user can then use `Homer`'s `annotatePeaks.pl` function to generate a counts matrix with the final merged peak set and `homer-tags` directories made in the mapping step. 
 
 Please see [this](https://github.com/erebboah/bulk_atac_pipeline/tree/main/scripts) readme for details on each step.
 
@@ -212,4 +213,42 @@ C2C12_MB_IR/
         ...
         idr-output/
             combined.peaks-top-set.txt
+```
+
+## Generate final peak set
+The `combined.peaks-top-set.txt` from each of the 150 and 500bp IDR analyses for all the samples in the experiment is the input into merging and filtering peaks.
+
+The script also uses a `samples.txt` file with all of the samples you want to consider as part of the experiment, and a no-pass list/exclusion list of repeat regions and otherwise untrustworthy regions which can be found [here](https://github.com/Boyle-Lab/Blacklist/tree/master/lists).
+
+This script merges peaks (`merged.peaks.bed`), filters out the no pass list regions (`merged.peaks.filt.bed`), and labels the final set of peaks which will be the rows of the counts matrix from Peak1 to PeakN.
+
+To run:
+```
+sbatch merge_peaks_step5.sh ../ref/mm10-nopasslist.v2.bed C2C12_MB
+```
+
+The output is in a new folder with the name passed as the second argument to the script:
+```
+C2C12_MB
+    merged.peaks.bed
+    merged.peaks.filt.bed
+    merged.peaks.filt.final.bed
+```
+
+## Generate counts matrix
+Since the replicates for each experiment will change, I find it's easier to run the last step manually and use tab to complete to add in all the `homer-tags` directories that you used to make the merged peak set.
+
+Make sure `Homer` is available and you have your genome of interest installed.
+
+I like to output the final matrix in the same folder as the final peak set.
+
+```
+annotatePeaks.pl C2C12_MB/merged.peaks.filt.fixed.bed mm10 -raw -annStats C2C12_MB/annotationStats.txt -d C2C12_MB_ER1/mapped/C2C12_MB_ER1_homer-tags  C2C12_MB_ER2/mapped/C2C12_MB_ER2_homer-tags C2C12_MB_IR1/mapped/C2C12_MB_IR1_homer-tags C2C12_MB_IR2/mapped/C2C12_MB_IR2_homer-tags > C2C12_MB/matrix.raw.txt
+```
+
+The header is unwieldly because it includes the path of all the tag directories; the columns (1-18) are as follows: 1) peakID, 2) chromosome, 3) start, 4) stop, 5) strand, 6) peak score, 7) focus ratio, 8) annotation, 9) detailed annotation, 10) distance to TSS, 11) nearest promoter, 12) promoter ID, 13) nearest unique..?, 14) nearest Refseq ID, 15) nearest Ensemble ID, 16) gene name, 17) gene alias, and 18) gene description, followed by columns of counts for the input tag directories in the order they were listed in columns 19 onward.
+
+I remove the header and keep columns of interest and the counts columns. Since I have 4 samples, I keep columns 19-22.
+```
+tail -n +2 C2C12_MB/matrix.raw.txt | cut -f 1,2,3,4,15,16,19,20,21,22 > C2C12_MB/matrix.txt
 ```
