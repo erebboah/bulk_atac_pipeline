@@ -159,10 +159,54 @@ sbatch idr_step4.sh C2C12_MB_ER1 C2C12_MB_ER2 C2C12_MB_ER
 sbatch idr_step4.sh C2C12_MB_IR1 C2C12_MB_IR2 C2C12_MB_IR
 ```
 
-The outputs are in a new directory with the sample name:
+The extensive outputs from `IDR` are in a new directory with the sample name. The directory structure is the same between `peaks150` and `peaks500`.
+
+Tag directories (`combined`) for 150 and 500bp peaks are made using both replicates (e.g. C2C12_MB_ER1 and C2C12_MB_ER2) and peaks are called (`combined.peaks.txt`).
+
+Using IDR python code, pseudorep tag directories are created for individual and pooled replicates (`pseudoreps/individual` and `pseudoreps/pooled`) and peaks are called (e.g. `pseudoreps/individual/C2C12_MB_ER1_homer-tags-Pseudorep1_peaks.txt` and `pseudoreps/pooled/combined-Pseudorep1_peaks.txt`).
+
+Finally, IDR analysis is run to produce a final set of peaks passing a cutoff of 0.01. These peaks are confident and more likely real.
 ```
 C2C12_MB_ER/
-    
+    peaks150/
+        C2C12_MB_ER1.150bp.peaks.txt
+        C2C12_MB_ER2.150bp.peaks.txt
+        combined/
+            chr10.tags.tsv
+            chr11.tags.tsv
+            chr12.tags.tsv
+            ...
+            combined.peaks.txt
+        idr-output/
+            combined.peaks-top-set.txt
+            narrowpeaks/
+            plots/
+            pooled_comparisons/
+            pseudorep_comparisons/
+            replicate_comparisons/
+        pseudoreps/
+            individual/
+                C2C12_MB_ER1_homer-tags-Pseudorep1/
+                C2C12_MB_ER1_homer-tags-Pseudorep1_peaks.txt
+                C2C12_MB_ER1_homer-tags-Pseudorep2/
+                C2C12_MB_ER1_homer-tags-Pseudorep2_peaks.txt
+                C2C12_MB_ER2_homer-tags-Pseudorep1/
+                C2C12_MB_ER2_homer-tags-Pseudorep1_peaks.txt
+                C2C12_MB_ER2_homer-tags-Pseudorep2/
+                C2C12_MB_ER2_homer-tags-Pseudorep2_peaks.txt
+            pooled/
+                combined-Pseudorep1/
+                combined-Pseudorep1_peaks.txt
+                combined-Pseudorep2/
+                combined-Pseudorep2_peaks.txt
+        replicates/
+            C2C12_MB_ER1.150bp.peaks.txt
+            C2C12_MB_ER2.150bp.peaks.txt
+    peaks500/
+        ...
 C2C12_MB_IR/
-    
+    peaks150/
+        ...
+    peaks500/ 
+        ...
 ```
