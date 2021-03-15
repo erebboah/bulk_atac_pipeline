@@ -246,7 +246,7 @@ I like to output the final matrix in the same folder as the final peak set.
 annotatePeaks.pl C2C12_MB/merged.peaks.filt.fixed.bed mm10 -raw -annStats C2C12_MB/annotationStats.txt -d C2C12_MB_ER1/mapped/C2C12_MB_ER1_homer-tags  C2C12_MB_ER2/mapped/C2C12_MB_ER2_homer-tags C2C12_MB_IR1/mapped/C2C12_MB_IR1_homer-tags C2C12_MB_IR2/mapped/C2C12_MB_IR2_homer-tags > C2C12_MB/matrix.raw.txt
 ```
 
-The header is unwieldly because it includes the path of all the tag directories; the columns (1-18) are as follows: 
+The header is unwieldly because it includes the path of all the tag directories; the columns (1-18) contain: 
 1. peakID
 2. chromosome
 3. start
