@@ -273,7 +273,8 @@ I remove the header and keep columns of interest and the counts columns. Since I
 ```
 tail -n +2 C2C12_MB/matrix.raw.txt | cut -f 1,2,3,4,15,16,20,21,22,23 > C2C12_MB/matrix.txt
 ```
-## Results
+# Results
+## Genome browser
 I uploaded the `bigWig` files from the mapping step to the genome browser using our lab server to [host](http://crick.bio.uci.edu/erebboah/bulk_atac/C2C12_MB/) them.
 
 The track can be loaded by clicking [here](https://genome.ucsc.edu/s/erebboah/C2C12_MB_bulkATAC).
@@ -281,3 +282,11 @@ The track can be loaded by clicking [here](https://genome.ucsc.edu/s/erebboah/C2
 This screenshot shows the 4 C2C12 myoblast bulk ATAC samples at the Myod1 locus, a myogenic transcription factor we expect to be expressed in these cells. One replicate `C2C12_MB_IR1` looks like it has slightly less signal at the promoter than the other 3 reps.
 
 ![myod1](https://github.com/erebboah/bulk_atac_pipeline/blob/main/figures/myod1_atac.png?raw=true)
+
+## GREAT annotation
+To see what genes are highly accessible, I uploaded the final merged peak set to [GREAT](http://great.stanford.edu/public/html/), which is another tool to annotate peaks, as well as does a ontology analysis of the genes....
+
+## Future directions
+As we add more samples, especially of differentiated cells, we can perform differential accessibility testing between samples using our counts matrix. 
+
+With enough ATAC-seq samples, we can perform interesting analyses such as transcription factor footprinting and motif enrichment analysis.
