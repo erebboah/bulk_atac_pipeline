@@ -172,9 +172,6 @@ C2C12_MB_ER/
         C2C12_MB_ER1.150bp.peaks.txt
         C2C12_MB_ER2.150bp.peaks.txt
         combined/
-            chr10.tags.tsv
-            chr11.tags.tsv
-            chr12.tags.tsv
             ...
             combined.peaks.txt
         idr-output/
