@@ -1,17 +1,22 @@
 name	Unique Positions	Total Tags
-genome	25837594	22614973.0
+genome	36837436	32055886.5
 fragmentLengthEstimate=90		
 peakSizeEstimate=167		
-tagsPerBP=0.012839		
-averageTagsPerPosition=0.457		
+tagsPerBP=0.011759		
+averageTagsPerPosition=0.451		
 medianTagsPerPosition=0		
-averageTagLength=42.903		
-gsizeEstimate=1761493928		
+averageTagLength=42.901		
+gsizeEstimate=2726113471		
 averageFragmentGCcontent=-1.000		
 chr1	2596556	2192938.0
 chr2	2713199	2311809.0
 chr3	1925945	1630982.0
 chr4	2263837	1953956.0
+chr5	2181832	1894030.0
+chr6	1892032	1587280.0
+chr7	1883196	1635349.0
+chr8	2094497	1906604.0
+chr9	2062559	1790007.0
 chr10	1877522	1615122.0
 chr11	2591856	2406559.0
 chr12	1506197	1295442.0
@@ -22,6 +27,9 @@ chr16	1260775	1057762.0
 chr17	1602906	1559491.0
 chr18	1222264	1030248.0
 chr19	1115006	1013662.0
+chrX	865899	603539.0
+chrY	4929	8035.0
+chrM	592	322.0
 chr1_GL456210_random	60	30.0
 chr1_GL456211_random	166	83.0
 chr1_GL456212_random	82	41.0
@@ -31,4 +39,34 @@ chr4_GL456216_random	2830	5311.0
 chr4_GL456350_random	2	1.0
 chr4_JH584292_random	23	12.0
 chr4_JH584293_random	4	2.0
-cmd=makeTagDirectory /share/crsp/lab/seyedam/erebboah/bulk_atac_pipeline/C2C12_MB_ER1/mapped/C2C12_MB_ER1_homer-tags /share/crsp/lab/seyedam/erebboah/bulk_atac_pipeline/C2C12_MB_ER1/mapped/C2C12_MB_ER1_shifted_reads_sorted.bam -format sam		
+chr4_JH584295_random	247	144.5
+chr5_GL456354_random	6	3.0
+chr5_JH584296_random	6	3.0
+chr5_JH584297_random	6	3.0
+chr5_JH584298_random	2	1.0
+chr5_JH584299_random	60	30.0
+chr7_GL456219_random	78	69.0
+chrUn_GL456239	486	247.0
+chrUn_GL456359	1404	1536.0
+chrUn_GL456360	200	102.0
+chrUn_GL456366	299	173.0
+chrUn_GL456367	120	60.0
+chrUn_GL456368	109	55.0
+chrUn_GL456370	49	25.0
+chrUn_GL456372	22	11.0
+chrUn_GL456378	69	35.0
+chrUn_GL456379	145	73.0
+chrUn_GL456381	183	92.0
+chrUn_GL456382	52	26.0
+chrUn_GL456383	659	363.0
+chrUn_GL456385	64	32.0
+chrUn_GL456387	335	177.0
+chrUn_GL456389	209	109.0
+chrUn_GL456390	171	88.0
+chrUn_GL456392	368	198.0
+chrUn_GL456393	458	236.0
+chrUn_GL456394	97	50.0
+chrUn_GL456396	193	101.0
+chrUn_JH584304	7084	11045.0
+chrX_GL456233_random	1125	660.0
+cmd=makeTagDirectory C2C12_MB_ER1_homer-tags C2C12_MB_ER1_shifted_reads_sorted.bam -format sam		
