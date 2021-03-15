@@ -55,7 +55,7 @@ C2C12_MB_ER2/
      ...     
 ```
 
-The `fastqc` outputs are also hosted on our [lab website](/var/www/html/erebboah/bulk_atac/C2C12_MB). 
+The `fastqc` outputs are also hosted on our [lab website](http://crick.bio.uci.edu/erebboah/bulk_atac/C2C12_MB/). 
 
 ## Map, remove duplicates, and shift reads
 If a `prefixes.txt` file has not been made, make one now of the samples you want to process.
