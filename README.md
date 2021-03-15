@@ -274,4 +274,8 @@ I remove the header and keep columns of interest and the counts columns. Since I
 tail -n +2 C2C12_MB/matrix.raw.txt | cut -f 1,2,3,4,15,16,20,21,22,23 > C2C12_MB/matrix.txt
 ```
 ## Results
-![myod1(https://github.com/erebboah/bulk_atac_pipeline/blob/main/figures/myod1_atac.png?raw=true)
+I uploaded the `bigWig` files from the mapping step to the genome browser using our lab server to [host](http://crick.bio.uci.edu/erebboah/bulk_atac/C2C12_MB/) them.
+
+The track can be loaded by clicking [here](https://genome.ucsc.edu/s/erebboah/C2C12_MB_bulkATAC).
+
+![myod1](https://github.com/erebboah/bulk_atac_pipeline/blob/main/figures/myod1_atac.png?raw=true)
