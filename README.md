@@ -264,11 +264,12 @@ The header is unwieldly because it includes the path of all the tag directories;
 15. nearest Ensemble ID
 16. gene name
 17. gene alias
-18. gene description,
+18. gene description
+19. gene type,
 
-followed by columns of counts for the input tag directories in the order they were listed in columns 19 onward.
+followed by columns of counts for the input tag directories in the order they were listed in columns 20 onward.
 
-I remove the header and keep columns of interest and the counts columns. Since I have 4 samples, I keep columns 19-22.
+I remove the header and keep columns of interest and the counts columns. Since I have 4 samples, I keep columns 20-23.
 ```
-tail -n +2 C2C12_MB/matrix.raw.txt | cut -f 1,2,3,4,15,16,19,20,21,22 > C2C12_MB/matrix.txt
+tail -n +2 C2C12_MB/matrix.raw.txt | cut -f 1,2,3,4,15,16,20,21,22,23 > C2C12_MB/matrix.txt
 ```
