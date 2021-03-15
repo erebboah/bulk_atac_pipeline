@@ -259,7 +259,7 @@ The header is unwieldly because it includes the path of all the tag directories;
 10. distance to TSS
 11. nearest promoter
 12. promoter ID
-13. nearest unique..?
+13. nearest Unigene ID
 14. nearest Refseq ID
 15. nearest Ensemble ID
 16. gene name
