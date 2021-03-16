@@ -294,6 +294,8 @@ The header is unwieldly because it includes the path of all the tag directories;
 followed by columns of counts for the input tag directories in the order they were listed in columns 20 onward.
 
 I remove the header and keep columns of interest and the counts columns. Since I have 4 samples, I keep columns 20-23.
+
+Columns 10 and 19 can also be useful for filtering by distance to TSS or promoter regions.
 ```
 tail -n +2 C2C12_MB/matrix.raw.tsv | cut -f 1,2,3,4,15,16,20,21,22,23 > C2C12_MB/matrix.tsv
 ```
