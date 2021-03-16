@@ -44,7 +44,7 @@ findPeaks homer-tags -LP .1 -poisson .1 -style factor -size 500 -minDist 50 -loc
 ```
 
 ### idr_step4.sh
-IDR is a process better explained [here](https://github.com/karmel/homer-idr) and is adapted from [ENCODE](https://projecteuclid.org/journals/annals-of-applied-statistics/volume-5/issue-3/Measuring-reproducibility-of-high-throughput/10.1214/11-AOAS466.full)/[Dr. Kundaje](https://sites.google.com/site/anshulkundaje/projects/idr/deprecated) but could stand to be updated. For now I think an old reproducibility pipeline is better than none at all...
+IDR is a process better explained [here](https://github.com/karmel/homer-idr) and is adapted from [ENCODE](https://projecteuclid.org/journals/annals-of-applied-statistics/volume-5/issue-3/Measuring-reproducibility-of-high-throughput/10.1214/11-AOAS466.full)/[Kundaje lab](https://sites.google.com/site/anshulkundaje/projects/idr/deprecated) but could stand to be updated. For now I think an old reproducibility pipeline is better than none at all...
 
 Peaks are called with recommended settings, for `-size 150` and `size -500`, for combined peaks, individual pseudoreps, and pooled pseudoreps.
 ```
