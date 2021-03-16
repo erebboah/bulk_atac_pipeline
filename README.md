@@ -352,7 +352,22 @@ Interestingly, we also capture high accessibility of Myh9, which is a large ["no
 Importantly, C2C12 is a flexible cell line that can be coaxed into differentiating to myotubes, adipocytes, and ostocytes.
 
 ## GREAT annotation
-To see what genes are highly accessible, I uploaded the final merged peak set to [GREAT](http://great.stanford.edu/public/html/), which is another tool to annotate peaks, as well as does a ontology analysis of the genes....
+To see what processes this proliferating cell line may be undergoing, I uploaded the final merged peak set to [GREAT](http://great.stanford.edu/public/html/), which is another tool to annotate peaks, as well as does a ontology analysis of the annotated genes.
+
+The top terms (using mm10 and single nearest gene within 50kb) were:
+1. circulatory system development
+2. animal organ morphogenesis
+3. anatomical structure formation involved in morphogenesis
+4. regulation of anatomical structure morphogenesis
+5. cellular response to endogenous stimulus
+6. positive regulation of cell differentiation
+7. cytoskeleton organization
+8. negative regulation of developmental process
+9. regulation of cell cycle
+10. regulation of protein localization
+
+![great](https://github.com/erebboah/bulk_atac_pipeline/blob/main/figures/great_50kb_alisettings.png?raw=true)
+
 
 ## Future directions
 This pipeline could still be more user-friendly, especially the last few steps.
