@@ -312,4 +312,4 @@ To see what genes are highly accessible, I uploaded the final merged peak set to
 ## Future directions
 As we add more samples, especially of differentiated cells, we can perform differential accessibility testing between samples using our counts matrix. 
 
-With enough ATAC-seq samples, we can perform interesting analyses such as transcription factor footprinting and motif enrichment analysis.
+With enough ATAC-seq samples, we can perform interesting analyses such as transcription factor footprinting and motif enrichment.
