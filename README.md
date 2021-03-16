@@ -343,7 +343,7 @@ Since these cells are proliferative precursors to differentiated skeletal muscle
 
 Asf1b is a histone chaperone. MicroRNA Mir23a has evidence in [literature](https://www.sciencedirect.com/science/article/pii/S0014482712003060) as an inhibitor of myogenic differentiation in C2C12 (indicating that accessibility may go down in differentiated cells). 
 
-MicroRNAs are known to be critical in skeletal muscle development and are known as "myomiRs". However, miRNAs such as miR-675 within a lncRNA such as H19 will also show up in chromatin data, maybe an artifact.
+MicroRNAs are known to be critical in skeletal muscle development and are known as ["myomiRs"](https://www.ncbi.nlm.nih.gov/pmc/articles/PMC4871711/). However, miRNAs such as miR-675 within a lncRNA such as H19 will also show up in chromatin data, maybe an artifact.
 
 Interestingly, we also capture high accessibility of Myh9, which is a large ["non-muscle"](https://en.wikipedia.org/wiki/MYH9) myosin heavy chain gene, but plays a role in early vertebrate development.
 
