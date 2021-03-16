@@ -354,7 +354,7 @@ Interestingly, we also capture high accessibility of Myh9, which is a large ["no
 Importantly, C2C12 is a flexible cell line that can be coaxed into differentiating to myotubes, adipocytes, and ostocytes.
 
 ## GREAT annotation
-To see what processes this proliferating cell line may be undergoing, I uploaded the final merged peak set to [GREAT](http://great.stanford.edu/public/html/), which is another tool to annotate peaks, as well as does a ontology analysis of the annotated genes.
+To see what processes this proliferating cell line may be undergoing, I uploaded the final merged peak set to [GREAT](http://great.stanford.edu/public/html/), which is another tool to annotate peaks and does an ontology analysis of the annotated genes.
 
 The top terms (using mm10 and single nearest gene within 50kb) were:
 1. circulatory system development
