@@ -5,12 +5,13 @@ I am adapting a bulk ATAC-seq pipeline written for old HPC using to one that wil
 
 Original scripts graciously provided by Dr. Rabi Murad and PhD candidate Klebea Carvalho (Mortazavi lab, UCI).
 
-In 5 bash scripts, this pipeline does the following in summary:
+In 5 bash scripts, this pipeline does the following:
 1) Check read quality with `fastqc`
 2) Map reads with `bowtie2`, remove duplicates with `Picard`, and shift reads due to transposase binding
 3) Call 150bp and 500bp peaks with `Homer`
 4) Run [IDR](https://github.com/karmel/homer-idr) (Irreproducibility Discovery Rate) on replicates
 5) Convert IDR peaks to bed files
+
 The user can then generate the final merged peak set, and use `Homer`'s `annotatePeaks.pl` function to make a counts matrix with the final merged peak set and `homer-tags` directories made in the mapping step. 
 
 Please see [this](https://github.com/erebboah/bulk_atac_pipeline/tree/main/scripts) readme for details on each step.
