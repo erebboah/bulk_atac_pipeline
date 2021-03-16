@@ -341,7 +341,7 @@ sort -rnk8  matrix.tsv | head -n 25 | awk -F "\t" '{print $6}' | sort | uniq
 
 Since these cells are proliferative precursors to differentiated skeletal muscle, I don't expect a lot of myogenic genes to be the most accessible, but rather cell cycle genes.
 
-Asf1b is a histone chaperone. MicroRNA Mir23a has evidence in [literature](https://www.sciencedirect.com/science/article/pii/S0014482712003060) as an inhibitor of myogenic differentiation in C2C12 (indicating that accessibility may go down in differentiated cells). 
+Asf1b is a histone chaperone. MicroRNA miR-23a has evidence in [literature](https://www.sciencedirect.com/science/article/pii/S0014482712003060) as an inhibitor of myogenic differentiation in C2C12 (indicating that accessibility may go down in differentiated cells). 
 
 MicroRNAs are known to be critical in skeletal muscle development and are known as ["myomiRs"](https://www.ncbi.nlm.nih.gov/pmc/articles/PMC4871711/). However, miRNAs such as miR-675 within a lncRNA such as H19 will also show up in chromatin data, maybe an artifact.
 
