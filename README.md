@@ -355,6 +355,10 @@ To see what genes are highly accessible, I uploaded the final merged peak set to
 ## Future directions
 This pipeline could still be more user-friendly, especially the last few steps.
 
+The set of ENCODE [cCREs](http://genome.ucsc.edu/cgi-bin/hgTrackUi?db=mm10&g=encodeCcreCombined) are a [curated](https://www.nature.com/articles/s41586-020-2493-4) set of regions with labels for 	promoter-like signatures (red), proximal enhancer-like signatures (orange), distal enhancer-like signatures (yellow), DNase-H3K4me3 regions (pink), and CTCF-only regions (blue).
+
+Because chromatin data is so complicated (and interesting), it is often worth the effort to cross-reference peak regions with other datasets, such as ENCODE cCREs and any other data for the cell line/tissue of interest (polyA-seq, ChIP-seq, Hi-C, etc.).
+
 As we add more samples, especially of differentiated cells, we can perform differential accessibility testing between samples using our counts matrix. 
 
 With enough ATAC-seq samples, we can perform interesting analyses such as transcription factor footprinting and motif enrichment.
