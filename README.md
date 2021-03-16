@@ -347,7 +347,7 @@ Asf1b is a histone chaperone. MicroRNA miR-23a has evidence in [literature](http
 
 MicroRNAs are known to be critical in skeletal muscle development and are known as ["myomiRs"](https://www.ncbi.nlm.nih.gov/pmc/articles/PMC4871711/). However, miRNAs such as miR-675 within a lncRNA such as H19 will also show up in chromatin data, maybe an artifact.
 
-Interestingly, we also capture high accessibility of Myh9, which is a large ["non-muscle"](https://en.wikipedia.org/wiki/MYH9) myosin heavy chain gene, but plays a role in early vertebrate development.
+Interestingly, we also capture high accessibility of Myh9, which is a large ["non-muscle"](https://en.wikipedia.org/wiki/MYH9) myosin heavy chain gene, but plays a role in early vertebrate development. (Note the scale is 8x higher than that for Myod1!)
 
 ![myh9](https://github.com/erebboah/bulk_atac_pipeline/blob/main/figures/myh9.png?raw=true)
 
