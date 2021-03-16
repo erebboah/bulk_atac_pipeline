@@ -166,7 +166,7 @@ Tag directories (`combined`) for 150 and 500bp peaks are made using both replica
 
 Using IDR python code, pseudorep tag directories are created for individual and pooled replicates (`pseudoreps/individual` and `pseudoreps/pooled`) and peaks are called (e.g. `pseudoreps/individual/C2C12_MB_ER1_homer-tags-Pseudorep1_peaks.txt` and `pseudoreps/pooled/combined-Pseudorep1_peaks.txt`).
 
-Finally, IDR analysis is run to produce a final set of peaks passing a cutoff of 0.01. These peaks are confident and more likely real.
+Finally, IDR analysis is run to produce a final set of peaks passing a cutoff of 0.01 (`combined.peaks-top-set.txt`). These peaks are confident and more likely real.
 ```
 C2C12_MB_ER/
     peaks150/
