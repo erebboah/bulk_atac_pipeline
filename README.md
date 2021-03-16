@@ -294,8 +294,23 @@ followed by columns of counts for the input tag directories in the order they we
 
 I remove the header and keep columns of interest and the counts columns. Since I have 4 samples, I keep columns 20-23.
 ```
-tail -n +2 C2C12_MB/matrix.raw.txt | cut -f 1,2,3,4,15,16,20,21,22,23 > C2C12_MB/matrix.txt
+tail -n +2 C2C12_MB/matrix.raw.tsv | cut -f 1,2,3,4,15,16,20,21,22,23 > C2C12_MB/matrix.tsv
 ```
+```
+C2C12_MB/
+    annotationStats.txt
+    C2C12_MB_ER_150bp.bed
+    C2C12_MB_ER_500bp.bed
+    C2C12_MB_IR_150bp.bed
+    C2C12_MB_IR_500bp.bed
+    matrix.raw.tsv
+    matrix.tsv
+    merged.peaks.bed
+    merged.peaks.filt.bed
+    merged.peaks.filt.final.bed
+    
+```
+
 # Results
 ## Genome browser
 I uploaded the `bigWig` files from the mapping step to the genome browser using our lab server to [host](http://crick.bio.uci.edu/erebboah/bulk_atac/C2C12_MB/) them.
