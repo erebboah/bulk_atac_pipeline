@@ -312,7 +312,8 @@ C2C12_MB/
     merged.peaks.filt.bed
     merged.peaks.filt.final.bed
     
-``
+```
+The final matrix should look like this, where the counts correspond to `C2C12_MB_ER1`, `C2C12_MB_ER2`, `C2C12_MB_IR1`, and `C2C12_MB_IR2`, respectively.
 ![matrix_screenshot](https://github.com/erebboah/bulk_atac_pipeline/blob/main/figures/matrix.png?raw=true)
 
 # Results
