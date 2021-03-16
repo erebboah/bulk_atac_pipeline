@@ -322,6 +322,31 @@ This screenshot shows the 4 C2C12 myoblast bulk ATAC samples at the Myod1 locus,
 
 ![myod1](https://github.com/erebboah/bulk_atac_pipeline/blob/main/figures/myod1_atac.png?raw=true)
 
+## Top annotated genes
+```
+sort -rnk8  matrix.tsv | head -n 25 | awk -F "\t" '{print $6}' | sort | uniq
+```
+1. Adgrg3
+2. Asf1b
+3. Dnpep
+4. Mir181c
+5. Mir23a
+6. Mob3a
+7. Mtmr4
+8. Myh9
+9. Rfx1
+10. Sp1
+
+Since these cells are proliferative precursors to differentiated skeletal muscle, I don't expect a lot of myogenic genes to be the most accessible, but rather cell cycle genes.
+
+Asf1b is a histone chaperone. MicroRNA Mir23a has evidence in [literature](https://www.sciencedirect.com/science/article/pii/S0014482712003060) as an inhibitor of myogenic differentiation in C2C12 (indicating that accessibility may go down in differentiated cells). 
+
+MicroRNAs are known to be critical in skeletal muscle development and are known as "myomiRs". However, miRNAs such as miR-675 within a lncRNA such as H19 will also show up in chromatin data, maybe an artifact.
+
+Interestingly, we also capture high accessibility of Myh9, which is a large ["non-muscle"](https://en.wikipedia.org/wiki/MYH9) myosin heavy chain gene, but plays a role in early vertebrate development.
+
+Importantly, C2C12 is a flexible cell line that can be coaxed into proliferating into myotubes, adipocyes, and ostocytes.
+
 ## GREAT annotation
 To see what genes are highly accessible, I uploaded the final merged peak set to [GREAT](http://great.stanford.edu/public/html/), which is another tool to annotate peaks, as well as does a ontology analysis of the genes....
 
