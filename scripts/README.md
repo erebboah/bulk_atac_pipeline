@@ -44,3 +44,15 @@ findPeaks homer-tags -LP .1 -poisson .1 -style factor -size 500 -minDist 50 -loc
 ```
 
 ### idr_step4.sh
+IDR is a process better explained [here](https://github.com/karmel/homer-idr) and is adapted from [ENCODE](https://projecteuclid.org/journals/annals-of-applied-statistics/volume-5/issue-3/Measuring-reproducibility-of-high-throughput/10.1214/11-AOAS466.full)/[Dr. Kundaje](https://sites.google.com/site/anshulkundaje/projects/idr/deprecated) but could stand to be updated. For now I think an old reproducibility pipeline is better than none at all...
+
+Peaks are called with recommended settings, for `-size 150` and `size -500`, for combined peaks, individual pseudoreps, and pooled pseudoreps.
+```
+ -LP .1 -poisson .1 -style factor -size 150 -minDist 50 -localSize 50000
+ -LP .1 -poisson .1 -style factor -size 500 -minDist 50 -localSize 50000
+ ```
+ 
+ IDR analysis is run with `-threshold 0.01`
+ 
+ ### get_peaks_step5.sh
+ This script simply converts the IDR `combined.peaks-top-set.txt` for 150 and 500bp peaks for all samples into bed files using `awk`, `tail`, and `sort`. I have not figured out a way to do this and the subsequent steps of merging and filtering in one bash script.
