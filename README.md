@@ -311,6 +311,8 @@ C2C12_MB/
     merged.peaks.filt.final.bed
     
 ```
+The final matrix should look like this:
+![matrix_screenshot](https://github.com/erebboah/bulk_atac_pipeline/blob/main/figures/matrix.png?raw=true)
 
 # Results
 ## Genome browser
