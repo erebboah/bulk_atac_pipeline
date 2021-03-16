@@ -380,4 +380,4 @@ Because chromatin data is so complicated (and interesting), it is often worth th
 
 As we add more samples, especially of differentiated cells, we can perform differential accessibility testing between samples using our counts matrix. 
 
-With enough read depth (>200 million reads), we can perform interesting analyses such as transcription factor footprinting and motif enrichment.
+With enough read depth, we can perform interesting analyses such as transcription factor footprinting and motif enrichment.
