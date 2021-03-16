@@ -10,8 +10,8 @@ In 5 bash scripts, this pipeline does the following in summary:
 2) Map reads with `bowtie2`, remove duplicates with `Picard`, and shift reads due to transposase binding
 3) Call 150bp and 500bp peaks with `Homer`
 4) Run [IDR](https://github.com/karmel/homer-idr) (Irreproducibility Discovery Rate) on replicates
-5) Merge peaks and remove regions in no-pass list
-The user can then use `Homer`'s `annotatePeaks.pl` function to generate a counts matrix with the final merged peak set and `homer-tags` directories made in the mapping step. 
+5) Convert IDR peaks to bed files
+The user can then generate the final merged peak set, and use `Homer`'s `annotatePeaks.pl` function to make a counts matrix with the final merged peak set and `homer-tags` directories made in the mapping step. 
 
 Please see [this](https://github.com/erebboah/bulk_atac_pipeline/tree/main/scripts) readme for details on each step.
 
@@ -325,6 +325,8 @@ This screenshot shows the 4 C2C12 myoblast bulk ATAC samples at the Myod1 locus,
 To see what genes are highly accessible, I uploaded the final merged peak set to [GREAT](http://great.stanford.edu/public/html/), which is another tool to annotate peaks, as well as does a ontology analysis of the genes....
 
 ## Future directions
+This pipeline could still be more user-friendly, especially the last few steps.
+
 As we add more samples, especially of differentiated cells, we can perform differential accessibility testing between samples using our counts matrix. 
 
 With enough ATAC-seq samples, we can perform interesting analyses such as transcription factor footprinting and motif enrichment.
