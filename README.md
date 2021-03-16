@@ -260,7 +260,7 @@ C2C12_MB/
 ```
 
 ## Generate counts matrix
-Since the replicates for each experiment will change, I find it's easier to run the last step manually and use tab to complete to add in all the `homer-tags` directories that you used to make the merged peak set.
+Since the replicates for each experiment will change, I find it's easier to run the last step manually as well and use tab to complete to add in all the `homer-tags` directories that you used to make the merged peak set.
 
 Make sure `Homer` is available and you have your genome of interest installed.
 
