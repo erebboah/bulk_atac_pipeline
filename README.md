@@ -347,7 +347,7 @@ MicroRNAs are known to be critical in skeletal muscle development and are known 
 
 Interestingly, we also capture high accessibility of Myh9, which is a large ["non-muscle"](https://en.wikipedia.org/wiki/MYH9) myosin heavy chain gene, but plays a role in early vertebrate development.
 
-Importantly, C2C12 is a flexible cell line that can be coaxed into differentiating to myotubes, adipocyes, and ostocytes.
+Importantly, C2C12 is a flexible cell line that can be coaxed into differentiating to myotubes, adipocytes, and ostocytes.
 
 ## GREAT annotation
 To see what genes are highly accessible, I uploaded the final merged peak set to [GREAT](http://great.stanford.edu/public/html/), which is another tool to annotate peaks, as well as does a ontology analysis of the genes....
