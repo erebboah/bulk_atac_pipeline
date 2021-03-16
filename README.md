@@ -19,7 +19,7 @@ Please see [this](https://github.com/erebboah/bulk_atac_pipeline/tree/main/scrip
 ## Check read quality
 First, make a prefixes text file containing the names of samples you want to process.
 
-I am working with 4 samples: 2 replicates of mouse C2C12 myoblasts built by me and my undergrad Isaryhia Rodriguez. The libraries were built using the [Active Motif kit](https://www.activemotif.com/documents/2182.pdf), cat. 53150, and sequenced on a NextSeq 500 with 50 million reads per paired-end 43x43 library. 
+I am working with 4 samples: 2 replicates of mouse C2C12 myoblasts built by me and my undergrad Isaryhia Rodriguez. The libraries were built using the [Active Motif kit](https://www.activemotif.com/documents/2182.pdf), cat. 53150, and sequenced on an Illumina NextSeq 500 with 50 million reads per paired-end 43x43 library. 
 
 ```
 data/
