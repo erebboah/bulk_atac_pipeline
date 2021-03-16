@@ -323,6 +323,8 @@ This screenshot shows the 4 C2C12 myoblast bulk ATAC samples at the Myod1 locus,
 ![myod1](https://github.com/erebboah/bulk_atac_pipeline/blob/main/figures/myod1_atac.png?raw=true)
 
 ## Top annotated genes
+("Top" by C2C12_ER2, because it looks the best at first glance at the browser).
+
 ```
 sort -rnk8  matrix.tsv | head -n 25 | awk -F "\t" '{print $6}' | sort | uniq
 ```
