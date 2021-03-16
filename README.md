@@ -218,18 +218,41 @@ C2C12_MB_IR/
 ## Generate final peak set
 The `combined.peaks-top-set.txt` from each of the 150 and 500bp IDR analyses for all the samples in the experiment is the input into merging and filtering peaks.
 
-The script also uses a `samples.txt` file with all of the samples you want to consider as part of the experiment, and a no-pass list/exclusion list of repeat regions and otherwise untrustworthy regions which can be found [here](https://github.com/Boyle-Lab/Blacklist/tree/master/lists).
+The script also uses a `samples.txt` file with all of the samples you want to consider as part of the experiment.
 
-This script merges peaks (`merged.peaks.bed`), filters out the no pass list regions (`merged.peaks.filt.bed`), and labels the final set of peaks which will be the rows of the counts matrix from Peak1 to PeakN.
-
-To run:
+To make bed files for all of the peaks:
 ```
-sbatch merge_peaks_step5.sh ../ref/mm10-nopasslist.v2.bed C2C12_MB
+sbatch get_peaks_step5.sh C2C12_MB
 ```
 
-The output is in a new folder with the name passed as the second argument to the script:
+The output is in a new folder with the experiment name passed as the argument to the script:
 ```
 C2C12_MB/
+    C2C12_MB_ER_150bp.bed
+    C2C12_MB_ER_500bp.bed
+    C2C12_MB_IR_150bp.bed
+    C2C12_MB_IR_500bp.bed
+```
+
+To merge peaks and filter out a no-pass list/exclusion list of repeat regions which can be found [here](https://github.com/Boyle-Lab/Blacklist/tree/master/lists), you can run the following:
+
+```
+cat C2C12_MB/*.bed > C2C12_MB/merged.peaks.bed
+bedtools intersect -v -a C2C12_MB/merged.peaks.bed -b ref/mm10-nopasslist.v2.bed > C2C12_MB/merged.peaks.filt.bed
+```
+
+And finally a python script appends a Peak ID to each region from Peak1 to PeakN:
+```
+python scripts/addPeakName.py C2C12_MB/merged.peaks.filt.bed C2C12_MB/merged.peaks.filt.final.bed
+```
+
+The outputs are in the experiment folder:
+```
+C2C12_MB/
+    C2C12_MB_ER_150bp.bed
+    C2C12_MB_ER_500bp.bed
+    C2C12_MB_IR_150bp.bed
+    C2C12_MB_IR_500bp.bed
     merged.peaks.bed
     merged.peaks.filt.bed
     merged.peaks.filt.final.bed
