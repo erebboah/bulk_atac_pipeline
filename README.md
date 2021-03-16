@@ -160,7 +160,7 @@ sbatch idr_step4.sh C2C12_MB_ER1 C2C12_MB_ER2 C2C12_MB_ER
 ```
 sbatch idr_step4.sh C2C12_MB_IR1 C2C12_MB_IR2 C2C12_MB_IR
 ```
-/
+
 The extensive outputs from IDR are in a new directory with the sample name. The directory structure is the same between `peaks150/` and `peaks500/`.
 
 Tag directories (`combined`) for 150 and 500bp peaks are made using both replicates (e.g. C2C12_MB_ER1 and C2C12_MB_ER2) and peaks are called (`combined.peaks.txt`).
