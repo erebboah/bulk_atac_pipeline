@@ -55,4 +55,4 @@ Peaks are called with recommended settings, for `-size 150` and `size -500`, for
  IDR analysis is run with `-threshold 0.01`
  
  ### get_peaks_step5.sh
- This script simply converts the IDR `combined.peaks-top-set.txt` for 150 and 500bp peaks for all samples into bed files using `awk`, `tail`, and `sort`. I have not figured out a way to do this and the subsequent steps of merging and filtering in one bash script.
+ This script simply converts the IDR output `combined.peaks-top-set.txt` for 150 and 500bp peaks for all samples into bed files using `awk`, `tail`, and `sort`. I have not figured out a way to do this and the subsequent steps of merging and filtering in one bash script.
