@@ -98,32 +98,32 @@ The outputs are in a subdirectory called `mapped`.
 <details>
 <summary>Output</summary>
     
-C2C12_MB_ER1/
-    fastqc/
-    mapped/
-        C2C12_MB_ER1.bam
-        C2C12_MB_ER1.bigWig
-        C2C12_MB_ER1_chrM.bam
-        C2C12_MB_ER1.duplicates_metric.txt
-        C2C12_MB_ER1_shifted_reads_sorted.bam
-        C2C12_MB_ER1_shifted_reads_sorted.bam.bai
-        C2C12_MB_ER1.sort.bam
-        C2C12_MB_ER1.sort.nodup.bam
-        C2C12_MB_ER1.sort.nodup.header.sam
-        C2C12_MB_ER1_unaligned.fastq.1.gz
-        C2C12_MB_ER1_unaligned.fastq.2.gz
-        C2C12_MB_ER1_homer-tags/
-            chr10.tags.tsv
-            chr11.tags.tsv
-            ...
-            tagAutocorrelation.txt
-            tagCountDistribution.txt
-            tagInfo.txt
-            tagLengthDistribution.txt
-C2C12_MB_ER2/
-    fastqc/
-    mapped/
-        ...
+        C2C12_MB_ER1/
+            fastqc/
+            mapped/
+                C2C12_MB_ER1.bam
+                C2C12_MB_ER1.bigWig
+                C2C12_MB_ER1_chrM.bam
+                C2C12_MB_ER1.duplicates_metric.txt
+                C2C12_MB_ER1_shifted_reads_sorted.bam
+                C2C12_MB_ER1_shifted_reads_sorted.bam.bai
+                C2C12_MB_ER1.sort.bam
+                C2C12_MB_ER1.sort.nodup.bam
+                C2C12_MB_ER1.sort.nodup.header.sam
+                C2C12_MB_ER1_unaligned.fastq.1.gz
+                C2C12_MB_ER1_unaligned.fastq.2.gz
+                C2C12_MB_ER1_homer-tags/
+                    chr10.tags.tsv
+                    chr11.tags.tsv
+                    ...
+                    tagAutocorrelation.txt
+                    tagCountDistribution.txt
+                    tagInfo.txt
+                    tagLengthDistribution.txt
+        C2C12_MB_ER2/
+            fastqc/
+            mapped/
+                ...
 </details>
 
 The directory `homer-tags` will be used during peak calling.
