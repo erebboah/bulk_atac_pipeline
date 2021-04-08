@@ -98,32 +98,32 @@ The outputs are in a subdirectory called `mapped`.
 <details>
 <summary>Output</summary>
     
-        C2C12_MB_ER1/
-            fastqc/
-            mapped/
-                C2C12_MB_ER1.bam
-                C2C12_MB_ER1.bigWig
-                C2C12_MB_ER1_chrM.bam
-                C2C12_MB_ER1.duplicates_metric.txt
-                C2C12_MB_ER1_shifted_reads_sorted.bam
-                C2C12_MB_ER1_shifted_reads_sorted.bam.bai
-                C2C12_MB_ER1.sort.bam
-                C2C12_MB_ER1.sort.nodup.bam
-                C2C12_MB_ER1.sort.nodup.header.sam
-                C2C12_MB_ER1_unaligned.fastq.1.gz
-                C2C12_MB_ER1_unaligned.fastq.2.gz
-                C2C12_MB_ER1_homer-tags/
-                    chr10.tags.tsv
-                    chr11.tags.tsv
-                    ...
-                    tagAutocorrelation.txt
-                    tagCountDistribution.txt
-                    tagInfo.txt
-                    tagLengthDistribution.txt
-        C2C12_MB_ER2/
-            fastqc/
-            mapped/
+    C2C12_MB_ER1/
+        fastqc/
+        mapped/
+            C2C12_MB_ER1.bam
+            C2C12_MB_ER1.bigWig
+            C2C12_MB_ER1_chrM.bam
+            C2C12_MB_ER1.duplicates_metric.txt
+            C2C12_MB_ER1_shifted_reads_sorted.bam
+            C2C12_MB_ER1_shifted_reads_sorted.bam.bai
+            C2C12_MB_ER1.sort.bam
+            C2C12_MB_ER1.sort.nodup.bam
+            C2C12_MB_ER1.sort.nodup.header.sam
+            C2C12_MB_ER1_unaligned.fastq.1.gz
+            C2C12_MB_ER1_unaligned.fastq.2.gz
+            C2C12_MB_ER1_homer-tags/
+                chr10.tags.tsv
+                chr11.tags.tsv
                 ...
+                tagAutocorrelation.txt
+                tagCountDistribution.txt
+                tagInfo.txt
+                tagLengthDistribution.txt
+    C2C12_MB_ER2/
+        fastqc/
+        mapped/
+            ...
 </details>
 
 The directory `homer-tags` will be used during peak calling.
@@ -140,19 +140,19 @@ The outputs are in a subdirectory called `peaks`.
 <details>
 <summary>Output</summary>
     
-C2C12_MB_ER1/
-    fastqc/
-    mapped/
-    peaks/
-        C2C12_MB_ER1.150bp.peaks.txt
-        C2C12_MB_ER1.500bp.peaks.txt
-C2C12_MB_ER2/
-    fastqc/
-    mapped/
-    peaks/
-        C2C12_MB_ER2.150bp.peaks.txt
-        C2C12_MB_ER2.500bp.peaks.txt
-    ...
+    C2C12_MB_ER1/
+        fastqc/
+        mapped/
+        peaks/
+            C2C12_MB_ER1.150bp.peaks.txt
+            C2C12_MB_ER1.500bp.peaks.txt
+    C2C12_MB_ER2/
+        fastqc/
+        mapped/
+        peaks/
+            C2C12_MB_ER2.150bp.peaks.txt
+            C2C12_MB_ER2.500bp.peaks.txt
+        ...
 </details>
 
 ## Run IDR
@@ -178,51 +178,51 @@ Finally, IDR analysis is run to produce a final set of peaks passing a cutoff of
 <details>
 <summary>Output</summary>
     
-C2C12_MB_ER/
-    peaks150/
-        C2C12_MB_ER1.150bp.peaks.txt
-        C2C12_MB_ER2.150bp.peaks.txt
-        combined/
-            ...
-            combined.peaks.txt
-        idr-output/
-            combined.peaks-top-set.txt
-            narrowpeaks/
-            plots/
-            pooled_comparisons/
-            pseudorep_comparisons/
-            replicate_comparisons/
-        pseudoreps/
-            individual/
-                C2C12_MB_ER1_homer-tags-Pseudorep1/
-                C2C12_MB_ER1_homer-tags-Pseudorep1_peaks.txt
-                C2C12_MB_ER1_homer-tags-Pseudorep2/
-                C2C12_MB_ER1_homer-tags-Pseudorep2_peaks.txt
-                C2C12_MB_ER2_homer-tags-Pseudorep1/
-                C2C12_MB_ER2_homer-tags-Pseudorep1_peaks.txt
-                C2C12_MB_ER2_homer-tags-Pseudorep2/
-                C2C12_MB_ER2_homer-tags-Pseudorep2_peaks.txt
-            pooled/
-                combined-Pseudorep1/
-                combined-Pseudorep1_peaks.txt
-                combined-Pseudorep2/
-                combined-Pseudorep2_peaks.txt
-        replicates/
+    C2C12_MB_ER/
+        peaks150/
             C2C12_MB_ER1.150bp.peaks.txt
             C2C12_MB_ER2.150bp.peaks.txt
-    peaks500/
-        ...
-        idr-output/
-            combined.peaks-top-set.txt
-C2C12_MB_IR/
-    peaks150/
-        ...
-        idr-output/
-            combined.peaks-top-set.txt
-    peaks500/ 
-        ...
-        idr-output/
-            combined.peaks-top-set.txt
+            combined/
+                ...
+                combined.peaks.txt
+            idr-output/
+                combined.peaks-top-set.txt
+                narrowpeaks/
+                plots/
+                pooled_comparisons/
+                pseudorep_comparisons/
+                replicate_comparisons/
+            pseudoreps/
+                individual/
+                    C2C12_MB_ER1_homer-tags-Pseudorep1/
+                    C2C12_MB_ER1_homer-tags-Pseudorep1_peaks.txt
+                    C2C12_MB_ER1_homer-tags-Pseudorep2/
+                    C2C12_MB_ER1_homer-tags-Pseudorep2_peaks.txt
+                    C2C12_MB_ER2_homer-tags-Pseudorep1/
+                    C2C12_MB_ER2_homer-tags-Pseudorep1_peaks.txt
+                    C2C12_MB_ER2_homer-tags-Pseudorep2/
+                    C2C12_MB_ER2_homer-tags-Pseudorep2_peaks.txt
+                pooled/
+                    combined-Pseudorep1/
+                    combined-Pseudorep1_peaks.txt
+                    combined-Pseudorep2/
+                    combined-Pseudorep2_peaks.txt
+            replicates/
+                C2C12_MB_ER1.150bp.peaks.txt
+                C2C12_MB_ER2.150bp.peaks.txt
+        peaks500/
+            ...
+            idr-output/
+                combined.peaks-top-set.txt
+    C2C12_MB_IR/
+        peaks150/
+            ...
+            idr-output/
+                combined.peaks-top-set.txt
+        peaks500/ 
+            ...
+            idr-output/
+                combined.peaks-top-set.txt
 </details>
 
 ## Generate final peak set
@@ -239,11 +239,11 @@ The output is in a new folder with the experiment name passed as the argument to
 <details>
 <summary>Output</summary>
     
-C2C12_MB/
-    C2C12_MB_ER_150bp.bed
-    C2C12_MB_ER_500bp.bed
-    C2C12_MB_IR_150bp.bed
-    C2C12_MB_IR_500bp.bed
+    C2C12_MB/
+        C2C12_MB_ER_150bp.bed
+        C2C12_MB_ER_500bp.bed
+        C2C12_MB_IR_150bp.bed
+        C2C12_MB_IR_500bp.bed
 </details>
 
 To merge peaks and filter out a no-pass list/exclusion list of repeat regions which can be found [here](https://github.com/Boyle-Lab/Blacklist/tree/master/lists), you can run the following:
@@ -262,14 +262,14 @@ The outputs are in the experiment folder.
 <details>
 <summary>Output</summary>
     
-C2C12_MB/
-    C2C12_MB_ER_150bp.bed
-    C2C12_MB_ER_500bp.bed
-    C2C12_MB_IR_150bp.bed
-    C2C12_MB_IR_500bp.bed
-    merged.peaks.bed
-    merged.peaks.filt.bed
-    merged.peaks.filt.final.bed
+    C2C12_MB/
+        C2C12_MB_ER_150bp.bed
+        C2C12_MB_ER_500bp.bed
+        C2C12_MB_IR_150bp.bed
+        C2C12_MB_IR_500bp.bed
+        merged.peaks.bed
+        merged.peaks.filt.bed
+        merged.peaks.filt.final.bed
 </details>
 
 ## Generate counts matrix
@@ -287,25 +287,25 @@ The header is unwieldly because it includes the paths of all the tag directories
 <details>
 <summary>Contents of 19 columns</summary>
     
-1. peakID
-2. chromosome
-3. start
-4. stop
-5. strand
-6. peak score
-7. focus ratio
-8. annotation
-9. detailed annotation
-10. distance to TSS
-11. nearest promoter
-12. promoter ID
-13. nearest Unigene ID
-14. nearest Refseq ID
-15. nearest Ensemble ID
-16. gene name
-17. gene alias
-18. gene description
-19. gene type
+    1. peakID
+    2. chromosome
+    3. start
+    4. stop
+    5. strand
+    6. peak score
+    7. focus ratio
+    8. annotation
+    9. detailed annotation
+    10. distance to TSS
+    11. nearest promoter
+    12. promoter ID
+    13. nearest Unigene ID
+    14. nearest Refseq ID
+    15. nearest Ensemble ID
+    16. gene name
+    17. gene alias
+    18. gene description
+    19. gene type
 </details>
 
 followed by columns of counts for the input tag directories in the order they were listed in columns 20 onward.
@@ -320,17 +320,17 @@ tail -n +2 C2C12_MB/matrix.raw.tsv | cut -f 1,2,3,4,15,16,20,21,22,23 > C2C12_MB
 <details>
 <summary>Output</summary>
     
-C2C12_MB/
-    annotationStats.txt
-    C2C12_MB_ER_150bp.bed
-    C2C12_MB_ER_500bp.bed
-    C2C12_MB_IR_150bp.bed
-    C2C12_MB_IR_500bp.bed
-    matrix.raw.tsv
-    matrix.tsv
-    merged.peaks.bed
-    merged.peaks.filt.bed
-    merged.peaks.filt.final.bed
+    C2C12_MB/
+        annotationStats.txt
+        C2C12_MB_ER_150bp.bed
+        C2C12_MB_ER_500bp.bed
+        C2C12_MB_IR_150bp.bed
+        C2C12_MB_IR_500bp.bed
+        matrix.raw.tsv
+        matrix.tsv
+        merged.peaks.bed
+        merged.peaks.filt.bed
+        merged.peaks.filt.final.bed
 </details>    
 
 The final matrix should look like this, where the counts correspond to `C2C12_MB_ER1`, `C2C12_MB_ER2`, `C2C12_MB_IR1`, and `C2C12_MB_IR2`, respectively.
@@ -367,13 +367,9 @@ Since these cells are proliferative precursors to differentiated skeletal muscle
 
 Asf1b is a histone chaperone. MicroRNA miR-23a has evidence in [literature](https://www.sciencedirect.com/science/article/pii/S0014482712003060) as an inhibitor of myogenic differentiation in C2C12 (indicating that accessibility may go down in differentiated cells). 
 
-MicroRNAs are known to be critical in skeletal muscle development and are known as ["myomiRs"](https://www.ncbi.nlm.nih.gov/pmc/articles/PMC4871711/). However, miRNAs such as miR-675 within a lncRNA such as H19 will also show up in chromatin data, maybe an artifact.
-
 Interestingly, we also capture high accessibility of Myh9, which is a large ["non-muscle"](https://en.wikipedia.org/wiki/MYH9) myosin heavy chain gene, but plays a role in early vertebrate development. (Note the scale is 8x higher than that for Myod1!)
 
 ![myh9](https://github.com/erebboah/bulk_atac_pipeline/blob/main/figures/myh9.png?raw=true)
-
-Importantly, C2C12 is a flexible cell line that can be coaxed into differentiating to myotubes, adipocytes, and ostocytes.
 
 ## GREAT annotation
 To see what processes this proliferating cell line may be undergoing, I uploaded the final merged peak set to [GREAT](http://great.stanford.edu/public/html/), which is another tool to annotate peaks and does an ontology analysis of the annotated genes.
