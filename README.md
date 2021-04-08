@@ -46,6 +46,7 @@ sbatch fastqc_step1.sh
 All pipeline outputs are in a directory with the same sample names as in the prefixes file.
 <details>
 <summary>Output</summary>
+    
 C2C12_MB_ER1/
     fastqc/
         C2C12_MB_ER1_R1_fastqc.html
@@ -54,7 +55,7 @@ C2C12_MB_ER1/
         C2C12_MB_ER1_R2_fastqc.zip
 C2C12_MB_ER2/
     fastqc/
-     ...     
+     ... 
 </details>
 
 The `fastqc` outputs are also hosted on our [lab website](http://crick.bio.uci.edu/erebboah/bulk_atac/C2C12_MB/). 
@@ -96,6 +97,7 @@ sbatch map_step2.sh ../ref/mm10/mm10 ../ref/chrM_mm10/chrM
 The outputs are in a subdirectory called `mapped`.
 <details>
 <summary>Output</summary>
+    
 C2C12_MB_ER1/
     fastqc/
     mapped/
@@ -137,6 +139,7 @@ sbatch peaks_step3.sh
 The outputs are in a subdirectory called `peaks`.
 <details>
 <summary>Output</summary>
+    
 C2C12_MB_ER1/
     fastqc/
     mapped/
@@ -174,6 +177,7 @@ Finally, IDR analysis is run to produce a final set of peaks passing a cutoff of
 
 <details>
 <summary>Output</summary>
+    
 C2C12_MB_ER/
     peaks150/
         C2C12_MB_ER1.150bp.peaks.txt
@@ -234,6 +238,7 @@ sbatch get_peaks_step5.sh C2C12_MB
 The output is in a new folder with the experiment name passed as the argument to the script.
 <details>
 <summary>Output</summary>
+    
 C2C12_MB/
     C2C12_MB_ER_150bp.bed
     C2C12_MB_ER_500bp.bed
@@ -256,6 +261,7 @@ python scripts/addPeakName.py C2C12_MB/merged.peaks.filt.bed C2C12_MB/merged.pea
 The outputs are in the experiment folder.
 <details>
 <summary>Output</summary>
+    
 C2C12_MB/
     C2C12_MB_ER_150bp.bed
     C2C12_MB_ER_500bp.bed
@@ -280,6 +286,7 @@ annotatePeaks.pl C2C12_MB/merged.peaks.filt.final.bed mm10 -raw -annStats C2C12_
 The header is unwieldly because it includes the paths of all the tag directories.
 <details>
 <summary>Contents of 19 columns</summary>
+    
 1. peakID
 2. chromosome
 3. start
@@ -312,6 +319,7 @@ tail -n +2 C2C12_MB/matrix.raw.tsv | cut -f 1,2,3,4,15,16,20,21,22,23 > C2C12_MB
 
 <details>
 <summary>Output</summary>
+    
 C2C12_MB/
     annotationStats.txt
     C2C12_MB_ER_150bp.bed
