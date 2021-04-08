@@ -308,7 +308,7 @@ The header is unwieldly because it includes the paths of all the tag directories
     19. gene type
 </details>
 
-followed by columns of counts for the input tag directories in the order they were listed in columns 20 onward.
+Columns of counts for the input tag directories are in the order they were listed in columns 20 onward.
 
 I remove the header and keep columns of interest and the counts columns. Since I have 4 samples, I keep columns 20-23.
 
