@@ -45,17 +45,17 @@ sbatch fastqc_step1.sh
 
 All pipeline outputs are in a directory with the same sample names as in the prefixes file.
 <details>
-<summary>Output</summary>
+    <summary>Output</summary>
     
-C2C12_MB_ER1/
-    fastqc/
-        C2C12_MB_ER1_R1_fastqc.html
-        C2C12_MB_ER1_R1_fastqc.zip
-        C2C12_MB_ER1_R2_fastqc.html
-        C2C12_MB_ER1_R2_fastqc.zip
-C2C12_MB_ER2/
-    fastqc/
-     ... 
+    C2C12_MB_ER1/
+        fastqc/
+            C2C12_MB_ER1_R1_fastqc.html
+            C2C12_MB_ER1_R1_fastqc.zip
+            C2C12_MB_ER1_R2_fastqc.html
+            C2C12_MB_ER1_R2_fastqc.zip
+    C2C12_MB_ER2/
+        fastqc/
+            ... 
 </details>
 
 The `fastqc` outputs are also hosted on our [lab website](http://crick.bio.uci.edu/erebboah/bulk_atac/C2C12_MB/). 
