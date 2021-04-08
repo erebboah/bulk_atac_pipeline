@@ -134,8 +134,9 @@ To run:
 sbatch peaks_step3.sh
 ```
 
-The outputs are in a subdirectory called `peaks`:
-```
+The outputs are in a subdirectory called `peaks`.
+<details>
+<summary>Output</summary>
 C2C12_MB_ER1/
     fastqc/
     mapped/
@@ -149,7 +150,7 @@ C2C12_MB_ER2/
         C2C12_MB_ER2.150bp.peaks.txt
         C2C12_MB_ER2.500bp.peaks.txt
     ...
-```
+</details>
 
 ## Run IDR
 This script makes use of the `.150bp.peaks.txt` and `.500bp.peaks.txt` files from the previous step.
@@ -170,7 +171,9 @@ Tag directories (`combined`) for 150 and 500bp peaks are made using both replica
 Using IDR python code, pseudorep tag directories are created for individual and pooled replicates (`pseudoreps/individual` and `pseudoreps/pooled`) and peaks are called (e.g. `pseudoreps/individual/C2C12_MB_ER1_homer-tags-Pseudorep1_peaks.txt` and `pseudoreps/pooled/combined-Pseudorep1_peaks.txt`).
 
 Finally, IDR analysis is run to produce a final set of peaks passing a cutoff of 0.01 (`combined.peaks-top-set.txt`). These peaks are confident and more likely real.
-```
+
+<details>
+<summary>Output</summary>
 C2C12_MB_ER/
     peaks150/
         C2C12_MB_ER1.150bp.peaks.txt
@@ -216,7 +219,7 @@ C2C12_MB_IR/
         ...
         idr-output/
             combined.peaks-top-set.txt
-```
+</details>
 
 ## Generate final peak set
 The `combined.peaks-top-set.txt` from each of the 150 and 500bp IDR analyses for all the samples in the experiment is the input into merging and filtering peaks.
@@ -228,14 +231,15 @@ To make bed files for all of the peaks:
 sbatch get_peaks_step5.sh C2C12_MB
 ```
 
-The output is in a new folder with the experiment name passed as the argument to the script:
-```
+The output is in a new folder with the experiment name passed as the argument to the script.
+<details>
+<summary>Output</summary>
 C2C12_MB/
     C2C12_MB_ER_150bp.bed
     C2C12_MB_ER_500bp.bed
     C2C12_MB_IR_150bp.bed
     C2C12_MB_IR_500bp.bed
-```
+</details>
 
 To merge peaks and filter out a no-pass list/exclusion list of repeat regions which can be found [here](https://github.com/Boyle-Lab/Blacklist/tree/master/lists), you can run the following:
 
@@ -249,8 +253,9 @@ And finally a python script appends a Peak ID to each region from Peak1 to PeakN
 python scripts/addPeakName.py C2C12_MB/merged.peaks.filt.bed C2C12_MB/merged.peaks.filt.final.bed
 ```
 
-The outputs are in the experiment folder:
-```
+The outputs are in the experiment folder.
+<details>
+<summary>Output</summary>
 C2C12_MB/
     C2C12_MB_ER_150bp.bed
     C2C12_MB_ER_500bp.bed
@@ -259,7 +264,7 @@ C2C12_MB/
     merged.peaks.bed
     merged.peaks.filt.bed
     merged.peaks.filt.final.bed
-```
+</details>
 
 ## Generate counts matrix
 Since the replicates for each experiment will change, I find it's easier to run the last step manually as well and use tab to complete to add in all the `homer-tags` directories that you used to make the merged peak set.
@@ -272,7 +277,9 @@ I like to output the final matrix in the same folder as the final peak set.
 annotatePeaks.pl C2C12_MB/merged.peaks.filt.final.bed mm10 -raw -annStats C2C12_MB/annotationStats.txt -d C2C12_MB_ER1/mapped/C2C12_MB_ER1_homer-tags  C2C12_MB_ER2/mapped/C2C12_MB_ER2_homer-tags C2C12_MB_IR1/mapped/C2C12_MB_IR1_homer-tags C2C12_MB_IR2/mapped/C2C12_MB_IR2_homer-tags > C2C12_MB/matrix.raw.txt
 ```
 
-The header is unwieldly because it includes the paths of all the tag directories; the columns (1-19) contain: 
+The header is unwieldly because it includes the paths of all the tag directories.
+<details>
+<summary>Contents of 19 columns</summary>
 1. peakID
 2. chromosome
 3. start
@@ -291,7 +298,8 @@ The header is unwieldly because it includes the paths of all the tag directories
 16. gene name
 17. gene alias
 18. gene description
-19. gene type,
+19. gene type
+</details>
 
 followed by columns of counts for the input tag directories in the order they were listed in columns 20 onward.
 
@@ -301,7 +309,9 @@ Columns 9 and 10 can also be useful for filtering by promoter/TSS regions or dis
 ```
 tail -n +2 C2C12_MB/matrix.raw.tsv | cut -f 1,2,3,4,15,16,20,21,22,23 > C2C12_MB/matrix.tsv
 ```
-```
+
+<details>
+<summary>Output</summary>
 C2C12_MB/
     annotationStats.txt
     C2C12_MB_ER_150bp.bed
@@ -313,8 +323,8 @@ C2C12_MB/
     merged.peaks.bed
     merged.peaks.filt.bed
     merged.peaks.filt.final.bed
-    
-```
+</details>    
+
 The final matrix should look like this, where the counts correspond to `C2C12_MB_ER1`, `C2C12_MB_ER2`, `C2C12_MB_IR1`, and `C2C12_MB_IR2`, respectively.
 ![matrix_screenshot](https://github.com/erebboah/bulk_atac_pipeline/blob/main/figures/matrix.png?raw=true)
 
@@ -366,11 +376,6 @@ The top terms (using mm10 and single nearest gene within 50kb) were:
 3. anatomical structure formation involved in morphogenesis
 4. regulation of anatomical structure morphogenesis
 5. cellular response to endogenous stimulus
-6. positive regulation of cell differentiation
-7. cytoskeleton organization
-8. negative regulation of developmental process
-9. regulation of cell cycle
-10. regulation of protein localization
 
 ![great](https://github.com/erebboah/bulk_atac_pipeline/blob/main/figures/great_50kb_alisettings.png?raw=true)
 
