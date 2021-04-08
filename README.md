@@ -93,7 +93,7 @@ sbatch map_step2.sh ../ref/mm10/mm10 ../ref/chrM_mm10/chrM
 ```
 
 The outputs are in a subdirectory called `mapped`:
-```
+<details>
 C2C12_MB_ER1/
     fastqc/
     mapped/
@@ -120,7 +120,7 @@ C2C12_MB_ER2/
     fastqc/
     mapped/
         ...
-```
+</details>
 
 The directory `homer-tags` will be used during peak calling.
 
